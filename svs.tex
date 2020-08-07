@@ -6,7 +6,7 @@ The project team shall conduct at least one Science Validation Survey with the s
 
 \subsection{Objectives:}
 
-The main objective with this Operations Readiness Requirement is to effectively conduct a "full dress rehearsal" of science operations.  The 30-day time span is intended to include operations affected by a full lunar cycle including:
+The main objective with this Construction Completeness Requirement is to effectively conduct a ``full dress rehearsa'' of science operations. The 30-day time span is intended to include operations affected by a full lunar cycle including:
 
 \begin{itemize}
 \item Filter swapping the u-band during dark time;
@@ -36,13 +36,22 @@ Data acquired during the SV survey(s) should be science quality to allow a summa
 
 The baseline schedule of on-sky observations during commissioning concludes with a 8-week period to undertake two science validation surveys. The two surveys are designed to test the Prompt Products and Data Release Products, respectively.
 
-    Wide-area Science Validation Survey: In a first phase, observe a region of roughly 1000 deg$^2$ to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey in multiple filters (2 weeks). Create image templates with the Data Release Production pipeline to be used as input for difference imaging. In a second phase starting roughly 4 weeks after the completion of the first phase, observe the same region to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey, running the Alert Production pipeline at full scale (2 weeks). The 4-week separation between phases is used for template generation and to allow evolution of variable and transient astrophysical sources between template and test images.
-    10-year Depth Science Validation Survey: Observe a region larger than 100 deg$^2$ to an integrated exposure equivalent to the 10-year Wide-Fast-Deep survey in multiple filters (4 weeks). Process the data with the Data Release Production pipeline.
+\begin{enumerate}
+\item Wide-area Science Validation Survey: In a first phase, observe a region of roughly 1000 deg$^2$ to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey in multiple filters (2 weeks). Create image templates with the Data Release Production pipeline to be used as input for difference imaging. In a second phase starting roughly 4 weeks after the completion of the first phase, observe the same region to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey, running the Alert Production pipeline at full scale (2 weeks). The 4-week separation between phases is used for template generation and to allow evolution of variable and transient astrophysical sources between template and test images.
+\item 10-year Depth Science Validation Survey: Observe a region larger than 100 deg$^2$ to an integrated exposure equivalent to the 10-year Wide-Fast-Deep survey in multiple filters (4 weeks). Process the data with the Data Release Production pipeline.
+\end{enumerate}
 
 Observation Timeline (baseline):
-2 weeks	Wide-area Science Validation Survey: Template Generation Phase
-4 weeks	10-year Depth Science Validation Survey
-2 weeks	Wide-area Science Validation Survey: Realtime Alert Production Phase
+
+\begin{tabular}{| l | l |}
+\hline
+2 weeks &	Wide-area Science Validation Survey: Template Generation Phase \\
+\hline
+4 weeks &	10-year Depth Science Validation Survey \\
+\hline
+2 weeks &	Wide-area Science Validation Survey: Realtime Alert Production Phase \\
+\hline
+\end{tabular}
 
 The wide-area SV survey is designed to approximate the difference imaging templates and data rates that would be expected during early science operations, thus also providing a full-scale test of the LSST Data Facility. The scheduler will drive nighttime observatory operation during the SV surveys.
 
@@ -54,9 +63,9 @@ In event of a shortened period for on-sky observations, we have a draft minimum 
 \item Nominal observing for scheduler testing = 3 nights (Note: some scheduler testing will be done during ComCam and LSSTCam integration periods)
 \item Challenging regions = 1 night
 \item Full-Depth Survey: 
-        20 year depth in $ugrizy$ overlapping at least 1 external reference field, allowing WFD dithers (factor ~3) -> $\sim$5K visits = 8 nights
+        20 year depth in $ugrizy$ overlapping at least 1 external reference field, allowing WFD dithers (factor $\sim3$) $\rightarrow$ $\sim$5K visits = 8 nights
 \item Wide-Area Survey:
-        1600 deg$^2$ in $gi$ filters to 1-year equivalent depth, repeated in two phases -> 12K visits = 20 nights
+        1600 deg$^2$ in $gi$ filters to 1-year equivalent depth, repeated in two phases $\rightarrow$ 12K visits = 20 nights
 \end{itemize}
 
 Program above is $\sim36$ nights total. The essential elements of any observing strategy for the Science Validation surveys are (1) the need to reach 10-year WFD equivalent depth in at least 3 filters in at least one field, (2) to reach 1-year WFD equivalent depth in at least 2 filters over an area exceeding 100 deg$^2$, (3) to exercise the nominal scheduler continuously for at least 1 night, and (4) to have coverage to at least 1-year WFD equivalent depth in all 6 filters in at least three fields spanning a range of stellar density. The observatory should operate continuously in scheduler-driven mode for at least 5 days of the 30 days allocated to the Science Validation surveys.
