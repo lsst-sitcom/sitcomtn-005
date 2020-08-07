@@ -1,1 +1,120 @@
 \section{LSST System Requirements \& SRD Verification/Validation}  \label{sec:srd}
+
+\subsection{Construction Completeness Criteria}
+The project team shall characterize and document the performance of the integrated LSST system with respect to the survey performance requirements and specifications enumerated in the LSST System Requirements, Observatory System Specifications and Science Requirements Document (\citeds {LSE-29}, \citeds {LSE-030} \& \citeds {LPM-17} section 3 respectively).
+
+\subsection{Objectives}
+
+The primary objective for this Operations Readiness Requirement is verify and validate that the data produced from the science validation surveys (plus additional observing campaigns) meets the science validation requirements as described in the LSST Verification and Validation (LVV) elements and test cases. This will include:
+
+\begin{itemize}
+
+	\item Verification of the generation of all required data products and services
+ 	\item Verification that the relevant metadata are being collected and archived
+	\item Verification of astrometric performance (relative and absolute)
+	\item Verification of photometric performance (relative and absolute)
+	\item Verification of data throughput and processing requirements for prompt data products  
+	\item Completeness and purity of sources detected in AP and DRP
+	\item Object deblending
+	\item Image template generation
+	\item Completeness and purity of moving object orbit calculations
+	\item The impact of stray light and optical ghosts 
+	\item Image quality (defined for each subsystem: telescope, camera, data management)
+	\item Crosstalk, filter response, and calibration
+	
+\end{itemize}
+
+In addition the normative Science Requirement data quality metrics and high-level science analyses, there are several data characteristics that represent important benchmarks of scientific capability, for example:
+
+\begin{itemize}
+
+	\item  Object detection completeness
+	\item  Object classification, e.g., star-galaxy separation
+	\item  Galaxy photometry (e.g., for photometric redshifts)
+	\item  Difference image analysis photometry (e.g., for statistical variability metrics)
+	\item  Low surface brightness features
+	\item  Weak-lensing null tests
+	\item  Crowded fields / de--blending
+	
+\end{itemize}
+
+The verification will make use of Quality Assessment (QA) and Quality Control (QC) tools developed during DM construction.
+
+\begin{itemize}
+
+	\item Quality Assessment: versatile pipelines to calculate performance metrics and other diagnostics
+	\item Quality Control: ensure that metrics are routinely calculated and track their distributions as the pipelines evolve and encounter new data
+	
+\end{itemize}
+
+In particular, Key Performance Metrics produced by DM and the Commissioning team together with additional test cases will be compared against the tabular requirements in the LSST SRD.   For the purpose of evaluating readiness we define the steps associated with verification, validation, and characterization of the LSST data and processing.
+
+\emph{Verification}: Demonstrate that the system as built is consistent with the design. Ensure that the requirements for the system are met using LSST and precursor data. Express the requirements in terms of metrics that can be evaluated using LSST and precursor data. Document the system performance for each of the verification metrics and requirements.
+
+\emph{Validation}: Demonstrate that the system is capable of meeting the scientific objectives of the survey. Ensure that the data products, data access, and science requirements can meet the objectives for LSST’s four major science themes. Document the system performance for each of the validation metrics and requirements and verify that there exist mechanisms to monitor the system performance during operations. Validate that the derived data products and access tools meet the science requirements of the community.
+
+\emph{Characterization}: Determine how the performance of the system degrades as a function of environment and technical performance of the components of the system. Measure how the metrics used in verification change as a function of operational conditions (including weather, site, operations, telescope, instrument, and software).
+The scope of science verification includes:
+
+\begin{itemize}
+
+	\item Determining whether the specifications defined in the OSS, LSR, and SRD are being met;
+	\item Characterizing other system performance metrics in the context of the four primary science drivers;
+	\item Studying environmental dependencies and technical optimization that inform early operations;
+	\item Documenting system performance and verifying mechanisms to monitor system performance during operations; and
+	\item Validating data delivery, derived data products, and data access tools that will be used by the science community.
+	
+\end{itemize}
+
+The goal is to quantify the range of demonstrated performance by using a combination of on-sky data, informed simulations of the LSST system, and external datasets. Observations taken during this period will enable higher-level data quality assessments that are not explicitly identified as requirements in the LSR or SRD, but nonetheless represent important benchmarks of scientific performance (e.g., source detection completeness, accuracy of star-galaxy separation, precision of photometric redshifts, and weak-lensing null tests). 
+
+All test cases as described under the LSST Verification and Validation  project will be implemented as either part of the DM Key Performance Metric validation system, as separate test procedures (e.g., Jupyter notebooks), or via visual inspection (e.g., to demonstrate that a service or data produce has been delivered). The LSST Science Platform will be the primary tool for data access and exploration. All metrics will be applied to data from the two main Science Validation surveys (the Wide-area Science Validation Survey and the 10-year Depth Science Validation Survey) and evaluated against the numerical values described in the LSST System Requirements, Observatory System Specifications and Science Requirements Document.
+
+If the schedule for on-sky observations is compressed, there might be a tight timeline for data processing and subsequent analysis of the Science Validation surveys. The statistical power of tests may be more limited if there are fewer observations. In that case, the validation and characterization may be more limited. For example, if the baseline for the wide-area science verification survey is shortened we will have to verify variability measures (e.g. periods) to specific classes of object. We may want to specify which classes of variability we will prioritize. Similarly, for the data release products, priority might be assigned to the verification of science performance for a brighter sample of objects (e.g., magnitudes i < 25).
+
+\subsection{Criteria or Completeness}
+The Commissioning Team shall complete sufficient science verification, validation, and characterization studies to be confident that 10-year LSST survey can satisfy OSS, LSR, and SRD. Some aspects of science performance are fixed by the telescope, camera, and observing startegy, while others can be continually improved through refinements of the Science Pipelines. In this context, key objectives of science verification are to distinguish between anomalies that can be addressed in the science pipelines and those that are more fundamental to the raw data, and to establish confidence that more subtle anomalies do not fundamentally limit science reach during Early Operations.
+
+To achieve this level of confidence, we identify several essential categories of science performance:
+
+\begin{itemize}
+
+	\item image quality (PSF FWHM, ellipticity), throughput, ghosts, noise
+	\item instrument signature removal
+	\item PSF modeling, photometric calibration, astrometric calibration
+	
+\end{itemize}
+
+Construction completeness is achieved when LSR and SRD metrics in the categories above pass the minimum requirements as stated in the SRD. Non-compliance exceptions to the above requirements will be considered following internal and external reviews of the assessed performance and operational impacts.
+In addition, substantial progress should be made on towards initial verification of difference imaging, deblending, galaxy photometry including shape measurement, moving object linkage, and proper motions.
+
+\subsection{Pre--Operations Interaction}
+Review of current status of science verification, validation, and characterization; and 
+
+Handoff of QA and QC tools. Ensure that operations team can run these tools, interpret the results, and add new metrics as needed.
+
+\subsection{Artifacts for Completion}
+
+\begin{itemize}
+
+	\item Minimum:
+		\begin{itemize}
+			\item Summary report of system--level science performance metrics, with comparison to specifications in the OSS, LSR, and SRD
+I			\item Impact study in the case of non-compliance
+			\item Documentation of Quality Assessment and Quality Control tools
+			\item Draft of Construction Paper for Commissioning Science Verification and Validation (not released until time of public release of commissioning data products)
+		\end{itemize}
+		
+	\item Baseline:
+		\begin{itemize}
+			\item For each science performance requirement in the LSR and SRD, summary statistic(s) or diagnostic plot(s) demonstrating the distribution of performance and correlations with environmental conditions, astrophysical foregrounds, etc.
+			\item Brief reports for a small collection of end-to-end studies demonstrating realistic workflows used for science validation (see examples above). It is envisioned that these studies may mature into full scientific publications during the first year of operations and may involve collaboration with the larger scientific community.
+		\end{itemize}
+		
+	\end{itemize}
+
+
+
+
+
+
