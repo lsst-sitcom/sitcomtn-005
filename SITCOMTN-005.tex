@@ -1,4 +1,4 @@
-\documentclass[SE,authoryear,toc]{lsstdoc}
+\documentclass[DM,lsstdraft,authoryear,toc]{lsstdoc}
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
 \input{meta}
 
@@ -16,11 +16,11 @@
 % \setDocSubtitle{A subtitle}
 
 \author{%
-William O'Mullane
+Chuck Claver, Leanne Guy, William O'Mullane, Add your name as you contribute
 }
 
 \setDocRef{SITCOMTN-005}
-\setDocUpstreamLocation{\url{https://github.com/lsst-sitcom/sitcomtn-005}}
+\setDocUpstreamLocation{\url{https://github.com/rubin-observatory/rtn-006}}
 
 \date{\vcsDate}
 
@@ -36,7 +36,7 @@ This technote collects together the elements that constitute criteria for Operat
 % Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
 % See LPM-51 for version number policy.
 \setDocChangeRecord{%
-  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{William O'Mullane}
+  \addtohist{1}{2020-08-06}{First draft}{Leanne Guy}
 }
 
 
@@ -49,6 +49,17 @@ This technote collects together the elements that constitute criteria for Operat
 
 % ADD CONTENT HERE
 % You can also use the \input command to include several content files.
+
+\input{oss}
+\input{srd}
+\input{svs}
+\input{dm}
+\input{community}
+\input{sdqa}
+\input{archiving}
+\input{documentation}
+\input{recommendations}
+\input{readiness}
 
 \appendix
 % Include all the relevant bib files.
