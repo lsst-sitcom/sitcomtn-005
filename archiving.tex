@@ -1,1 +1,51 @@
 \section{Recording and Archiving of System State Metadata}  \label{sec:metadata}
+
+\subsection{Operations Readiness Requirement}
+
+The Rubin Project Team shall demonstrate that relevant metadata are being collected and archived.
+
+\subsection{Objectives:}
+
+The objective with this requirement is to ensure that the technical state of the environment and hardware/software systems during the time of survey data collection is recorded with sufficient fidelity to be used in support of subsequent processing to produce the LSST science products. This is of particular importance for the determination and correction of systematics in the data as the survey progresses and statistics improve.  Additionally, the metadata record in required to assure efficient operation and maintenance of the observing facility.   The primary repository of this metadata is the Engineering Facility Database (EFD) - having two components: 1) a searchable SQL Cluster based capture of "house keeping" telemetry and 2) the Large File Annex for non-telemetry records (e.g. configuration files, images, other binary files outside the science pixel data etc...).
+
+Technical Metadata at the time of each visit includes but not limited to:
+
+\begin{itemize}
+
+	\item Meteorological state on the Summit;
+	\item Environmental conditions in the dome interior;
+	\item Atmospheric seeing as measured by the tower mounted DIMM;
+	\item Sky transparency map from the All-Sky Camera;
+	\item Technical "house keeping" telemetry from each subsystem component as published to the EFD;
+	\item Software version configuration status of all operating systems; and
+	\item Configuration parameters of all active subsystems.
+	
+\end{itemize}
+
+\subsection{Criteria for Completeness}
+
+Satisfying this criteria includes at a minimum:
+
+\begin{itemize}
+
+	\item Demonstrate the technical data (see above) are being recorded by the EFD at >99\% (TBC) reliability level - e.g. no significant dropouts in the live database at the Summit Facility;
+	\item Demonstrate the recorded data are being archived for long term access - copy at Base Facility in Chile and Copy at NCSA (possibly Interim Data Facility);
+	\item Access to the technical data is achievable through standard monitoring dashboards;
+	\item Access to the technical data is chewable through use customizable GUI interface(s); and
+	\item Technical data are queryable through Rubin Science Platform tools - e.g. Jupyter Lab notebooks and WEB interface.
+	
+\end{itemize}
+
+\subsection{Pre--Operations Interactions}
+
+Transfer and archiving the EFD at the Interim Data Center would be required for external queries.
+
+\subsection{Artifacts for ORR}
+
+\begin{itemize}
+
+	\item Report documenting minimum criteria as defined in the discussion section above
+	\item SDK and example code for custom dashboards and dashboard templates available through software repository(s) - e.g. GitHub
+	\item Example code for Rubin Science Platform queries through software repository - e.g. GitHub
+	
+\end{itemize}
