@@ -1,1 +1,98 @@
 \section{Science Validation Survey}  \label{sec:svs}
+
+\subsection{Operations Readiness Requirement:}
+
+The project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days;
+
+\subsection{Objectives:}
+
+The main objective with this Operations Readiness Requirement is to effectively conduct a ``full dress rehearsal" of science operations.  The 30-day time span is intended to include operations affected by a full lunar cycle including:
+
+\begin{itemize}
+\item Filter swapping the u-band during dark time;
+\item Management of survey scheduling during the period around full moon;
+\item Scheduler response to a range of environment conditions encountered at the observatory over a 30-day period, including periods of cloud cover and variable atmospheric seeing, variable winds, and changes in daytime / nighttime temperature;
+\item Response of the LSST Data Facility to sustained data rates including simultaneous execution of the Alert Production and Data Release Production pipelines.
+\end{itemize}
+
+In addition, the following concepts of operations and their procedures will be rehearsed and demonstrated:
+
+\begin{itemize}
+\item Full rehearsal of safety procedures for science operations;
+\item Routine daytime maintenance of the observatory;
+\item Collection and processing of routine calibration data and data products consistent with the time allotted in the 24-hour operations cycle;
+\item Routine nighttime survey observing operations driven by the scheduler with minimal human interaction, including response to realtime telemetry, AuxTel;
+\item Demonstration of near real time data quality assessment;
+\item Prompt processing of alerts within the required latency time (i.e., 60 seconds);
+\item Recovery from interruptions to observing (e.g. failure of the network)
+\item Distribution of prompt products;
+\item Prompt processing and the ``24-hour" data products (e.g., asteroid orbit calculations);
+\item Data Release Production (at least once) and publication to the LSST Science Platform.
+\end{itemize}
+
+Data acquired during the SV survey(s) should be science quality to allow a summative assessment of the delivered scientific performance of the as-built system.
+
+\subsection{Criteria for Completeness Description:}
+
+The baseline schedule of on-sky observations during commissioning concludes with a 8-week period to undertake two science validation surveys. The two surveys are designed to test the Prompt Products and Data Release Products, respectively.
+
+    Wide-area Science Validation Survey: In a first phase, observe a region of roughly 1000 deg$^2$ to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey in multiple filters (2 weeks). Create image templates with the Data Release Production pipeline to be used as input for difference imaging. In a second phase starting roughly 4 weeks after the completion of the first phase, observe the same region to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey, running the Alert Production pipeline at full scale (2 weeks). The 4-week separation between phases is used for template generation and to allow evolution of variable and transient astrophysical sources between template and test images.
+    10-year Depth Science Validation Survey: Observe a region larger than 100 deg$^2$ to an integrated exposure equivalent to the 10-year Wide-Fast-Deep survey in multiple filters (4 weeks). Process the data with the Data Release Production pipeline.
+
+Observation Timeline (baseline):
+2 weeks	Wide-area Science Validation Survey: Template Generation Phase
+4 weeks	10-year Depth Science Validation Survey
+2 weeks	Wide-area Science Validation Survey: Realtime Alert Production Phase
+
+The wide-area SV survey is designed to approximate the difference imaging templates and data rates that would be expected during early science operations, thus also providing a full-scale test of the LSST Data Facility. The scheduler will drive nighttime observatory operation during the SV surveys.
+
+In event of a shortened period for on-sky observations, we have a draft minimum observing strategy:
+
+\begin{itemize}
+\item Single-visit KPMs:
+        6 Star flats in $ugrizy$ \times 4 epochs = 4 nights
+\item Nominal observing for scheduler testing = 3 nights (Note: some scheduler testing will be done during ComCam and LSSTCam integration periods)
+\item Challenging regions = 1 night
+\item Full-Depth Survey: 
+        20 year depth in $ugrizy$ overlapping at least 1 external reference field, allowing WFD dithers (factor ~3) -> $\sim$5K visits = 8 nights
+\item Wide-Area Survey:
+        1600 deg$^2$ in $gi$ filters to 1-year equivalent depth, repeated in two phases -> 12K visits = 20 nights
+\end{itemize}
+
+Program above is $\sim36$ nights total. The essential elements of any observing strategy for the Science Validation surveys are (1) the need to reach 10-year WFD equivalent depth in at least 3 filters in at least one field, (2) to reach 1-year WFD equivalent depth in at least 2 filters over an area exceeding 100 deg$^2$, (3) to exercise the nominal scheduler continuously for at least 1 night, and (4) to have coverage to at least 1-year WFD equivalent depth in all 6 filters in at least three fields spanning a range of stellar density. The observatory should operate continuously in scheduler-driven mode for at least 5 days of the 30 days allocated to the Science Validation surveys.
+
+\subsection{Pre-Operations Interactions:}
+
+At the conclusion of the SV Survey(s), roughly two years will have elapsed since the start of Early System Integration and Testing, which places the LSST Observatory on schedule for its 2-year major maintenance and servicing.
+
+M1M3 Mirror Recoating: Remove, strip, clean, and re-coat the M1M3 mirror surfaces. Reinstall M1M3 mirror backinto telescope. Associated activities include:
+
+\begin{itemize}
+\item Remove Top-End Integrating Structure with Camera and transfer to Summit Facility camera lab.
+\item Install camera dummy mass to allow the telescope to point to zenith for removal of the M1M3 mirror cell. Remove M1M3 mirror assembly and transfer to Summit Facility re-coating plant.
+\item Strip old coating, clean and re-coat mirror surfaces.
+\item Re-install M1M3 in telescope and prepare to receive the top-end integrating structure with the camera.
+\end{itemize}
+
+Camera Maintenance and Servicing: Clean, service, perform maintenance, and replace shutter. Associated activities include:
+
+\begin{itemize}
+\item Replace camera shutter with ?fresh? operational unit;
+\item Inspect, service, or repair filter mechanisms;
+\item Clean internal camera optics;
+\item Inspect, service, and repair utility trunk electronics
+\end{itemize}
+
+\subsection{Artifacts for ORR:}
+
+\begin{itemize}
+\item Safety report from continuous observatory operations during the survey(s)
+\item Summary of daytime and nighttime activity for each 24 hour period of the survey(s)
+\item Metrics for the effective survey speed, including number of visits per night, telescope slew angles and slew times, filter changes, etc., which can be used to inform survey strategy during early operations
+\item Characterization of the distribution of data quality delivered by the as-built system, for example, distributions of single-visit image quality and image depth.
+\item Realtime alert stream
+\item Associated data release production products accessed via the LSST Science Platform (LSP)
+\item Pre-ORR observatory maintenance report summarizing the pre-operations engineering activities and current status of the observatory
+\item Documentation for observatory operations, including recommendations for optimization of data quality and survey efficiency
+\item Documentation for LSST Data Facility (LDF) operations
+\end{itemize}
