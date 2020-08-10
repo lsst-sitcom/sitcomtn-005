@@ -5,7 +5,7 @@
 
 The Data Management (DM) subsystem will be verified and validated again the {\it Data Management System Requirements} -- (\citeds{LSE-61}) and the  {\it Data Product Definition Document} -- DPDD (\citeds{LSE-163}).
 
-Prior to start of commissioning and operations the data processing will be verified to extent possible using precursor data, final verification and construction completeness will be determined with data obtained during the commissioning phase of the project.  In addition, functional verification will be achieved through testing and operations rehearsals/data challenges.  The approach to verification and validation adopted by the LSST Data Management Subsystem is given in the DM Test Plan, \citeds{LDM-503}.   The DM system will considered being successfully completed when all of the high-level requirements placed upon it, as defined in \citeds{LSE-61} the Data Management System Requirements (DMSR) have been verified.  The requirements have be categorized into by priorities, where 1a requirements will be verified to start commissioning, and 1b requirements are to be verified to complete the construction project and requirement in the categories 2 and 3 are essentially best effort for construction completeness (\citeds{LSE-61}).
+Prior to start of commissioning and operations the data processing will be verified to extent possible using precursor data, final verification and construction completeness will be determined with data obtained during the commissioning phase of the project.  In addition, functional verification will be achieved through testing and operations rehearsals/data challenges.  The approach to verification and validation adopted by the LSST Data Management Subsystem is given in the DM Test Plan (\citeds{LDM-503}).   The DM system will considered being successfully completed when all of the high-level requirements placed upon it, as defined in the {\it Data Management System Requirements} (DMSR, \citeds{LSE-61} ) have been verified.  The requirements have be categorized into by priorities, where 1a requirements will be verified to start commissioning, and 1b requirements are to be verified to complete the construction project and requirement in the categories 2 and 3 are essentially best effort for construction completeness (\citeds{LSE-61}).
 
 Broadly, this approach consists of three aspects:
 
@@ -20,7 +20,7 @@ The DM system will considered being successfully completed when all of the high-
 The DM Test Plan provides a series of high-level milestones and the accompanying the test schedule. 
 
 These requirements are verified by running tests, and recording the results of those tests in the LSST Jira system. 
-The approach that will be taken to verifying each requirement is described in \citeds{LDM-639} , the DM Acceptance Test Specification, which provides the dedicated test specifications for major components of Data Management.
+The approach that will be taken to verifying each requirement is described in the {\it DM Acceptance Test Specification,} (\citeds{LDM-639}), which provides the dedicated test specifications for major components of Data Management.
 
 
 %%%%%%%%% The following sections are common for all of DM  %%%%%%%%%	
@@ -32,7 +32,7 @@ The Data Management/Processing elements provide the functionality necessary to p
 
 \subsection{Criteria for Completeness} 
 Successful implementation all the requirements in the DMSR. 
-This will be evidenced by the DM Verification Control Document \citeds{LDM-692}.
+This will be evidenced by the DM Verification Control Document (\citeds{LDM-692}).
 
 The system as delivered meet the needs of the scientific community. 
 This will be evidenced by the system validation and operations rehearsals. 
@@ -50,7 +50,7 @@ The following artifacts will be provided for all Dm elements:
 
 \begin{itemize}
 	\item All DM Test plans and reports;
-	\item The DM Verification Control Document, \citeds{LDM-692}, which provides the verification matrix for all DMSR requirements and Specifications, as defined in \citeds{LSE-61};
+	\item The DM Verification Control Document (\citeds{LDM-692}), which provides the verification matrix for all DMSR requirements and Specifications, as defined in \citeds{LSE-61};
 	\item Non-compliance reports.
 \end{itemize}
 
@@ -61,13 +61,13 @@ The following artifacts will be provided for all Dm elements:
 % {\it Responsible: Eric Bellm (and Leanne Guy)}
 
 \subsubsection{Operations readiness Requirement}
-The Project shall demonstrate the Prompt (Alert) Processing meets its requirements as defined in the DMSR ( \citeds{LSE-61}) and the DPDD (\citeds{LSE-163}).  In particular the Prompt (Alert) Processing shall demonstrate its technical ability to meet the 60--second latency requirement for the transfer of data, processing difference images, and publishing detect sources from the Difference Imaging Analysis (DIA). 
+The Project shall demonstrate the Prompt (Alert) Processing meets its requirements as defined in the DMSR (\citeds{LSE-61}) and the DPDD (\citeds{LSE-163}).  In particular the Prompt (Alert) Processing shall demonstrate its technical ability to meet the 60--second latency requirement for the transfer of data, processing difference images, and publishing detect sources from the Difference Imaging Analysis (DIA). 
 
 \subsubsection{Objectives} 
 
 The objective of this Operational Requirement is to ensure that the Prompt Processing pipelines have been verified against requirements and produce the Prompt data products necessary for LSST Transient and Solar System science, and to enable rapid follow-up of time domain events. 
 
-Prompt Processing includes the Prompt Processing pipelines, precovery, MOPS, alert generation and distribution. Demonstration of an integrated LSST system for Prompt Processing must include, at some level, testing interfaces to the Minor Planet Center for Solar System Data products and with Community Brokers for Alerts. 
+Prompt Processing includes the Prompt Processing pipelines, pre--recovery, MOPS, alert generation and distribution. Demonstration of an integrated LSST system for Prompt Processing must include, at some level, testing interfaces to the Minor Planet Center for Solar System Data products and with Community Brokers for Alerts. 
 
 We expect that the PPDB should be populated reasonably normally, once templates to subtract from are available.  In the Alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
 
