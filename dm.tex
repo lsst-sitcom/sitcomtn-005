@@ -9,5 +9,16 @@
 
 \subsection{Data Release Processing}
 
+Operations readiness for Data Release Processing is difficult to fully disentangle from the verification and validation of the full DM system; a Data Release Production involves not just the image processing pipeline that is the component most visible to scientists, but integration with and usage of many other DM deliverables as well, including:
+
+\begin{itemize}
+\item data access middleware that archives and organizes both raw data from the observatory and processing outputs;
+\item process control middleware that provides a harness for running the pipelines at scale;
+\item systems for transferring processing outputs to components of the science platform for user access, including database ingest;
+\item hardware, operators, and other production services.
+\end{itemize}
+
+The Project will produce several Data Previews, each resembling an operations-era Data Release with steadily increasing scale, algorithmic sophistication,  and integration across DM (and the rest of the Project).
+Successful completion of these represents our highest-level criteria for operations readiness for data release processing, and the vehicle for much of our validation work -- performing validation using our own science platform on our own data products is the most direct way to demonstrate that scientists will be able to perform similar investigations with these tools on these data products.
 
 \subsection{Rubin Science Platform}
