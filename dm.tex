@@ -1,13 +1,89 @@
 \section{Verification and Validation of Data Management}  \label{sec:dm}
 
-
 \subsection{Verification Procedure for Data Management System Requirements (LSE-61)}
+{\it Responsible: Leanne Guy and Wil O'Mullane}
 
+The Data Management (DM) subsystem will be verified and validated to the extent possible prior to commissioning and operations. 
+This will be achieved through testing and operations rehearsals/data challenges. 
+The approach to verification and validation adopted by the LSST Data Management Subsystem is given in the DM Test Plan, \citeds{LDM-503}. 
+Broadly, this approach consists of three aspects:
+\begin{enumerate}
+\item Verification that the Data Management system as delivered meets the requirements placed upon it;
+\item Validation that the system as delivered meets the needs of the scientific community;
+\item Rehearsing the sustained operation of the system in operational scenarios.
+\end{enumerate}
+The DM Test Plan also provides a series of high-level milestones and the accompanying test schedule. 
+
+We regard the DM system as being successfully completed when all of the high-level requirements placed upon it, as defined in \cite{LSE-61} ? the Data Management System Requirements ? have been verified. 
+These requirements are verified by running tests, and recording the results of those tests in the LSST Jira system. 
+The approach that will be taken to verifying each requirement is described in \citeds{LDM-639} , the DM Acceptance Test Specification, which provides the dedicated test specifications for major components of Data Management.
+
+% LPG:Not sure this level of detail is needed in this document?
+% Documentation Automation for the Verification and Validation of Rubin Observatory Software is described in \citeds{dmtn-140}
 
 \subsection{Prompt Processing}
+{\it Responsible: Eric Bellm (and Leanne Guy)}
 
+\subsubsection{Construction Completeness Criteria}
+The project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days;
+
+\subsubsection{Objective} 
+
+The objective of this Operational Requirement is to ensure that the Prompt Processing pipelines have been verified against requirements and produce the Prompt data products necessary for LSST Transient and Solar System science, and to enable rapid follow-up of time domain events. 
+
+Prompt Processing includes the Prompt Processing pipelines, precovery, MOPS, alert generation and distribution. Demonstration of an integrated LSST system for Prompt Processing must include, at some level, testing interfaces to the Minor Planet Center for Solar System Data products and with Community Brokers for Alerts. 
+
+We expect that the PPDB should be populated reasonably normally, once templates to subtract from are available.  In the Alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
+
+We will run MOPS in commissioning to validate the solar system products pipelines, generate some solar system data products, and test the interfaces with the MPC. We could envision a stub SSObject record for already known asteroids; and some history (although obviously less than 12 months). Once the astrometry is sufficiently good (for asteroids is ~0.05-0.1"),  we can start regularly submitting to the MPC and testing the linking software. 
+
+It should be clear, that at least in early commissioning, alert distribution and submission to the MPC  will be with substantial latency with respect to the SRD operations-era latencies.  
+
+
+%%%%%%%%%% DRP %%%%%%%%%%%%%%%%%
 
 \subsection{Data Release Processing}
+{\it Responsible: Jim Bosch (and Leanne Guy)}
 
+\subsubsection{Construction Completeness Criteria}
+The project team shall process the data from the one (or more) of the Science Verification Surveys to produce a Data Release and make it available to the Commissioning Team through the DM Science User Interface as well as a subset for the EPO Public User Interface;
+
+\subsubsection{Objective} 
+
+
+%%%%%% RSP %%%%%%%%%%%
 
 \subsection{Rubin Science Platform}
+{\it Responsible: Gregory Dubois-Felsmann (and Leanne Guy)}
+
+\subsubsection{Construction Completeness Criteria}
+The project team shall demonstrate that the Rubin Science Platform can deliver data and data products; and that the interfaces aimed at the general public are functional.
+
+\subsubsection{Objective} 
+The objectives of this Operational Requirement are to ensure that the Rubin Science Platform (RSP), including the DM Science User Interface, have been verified against requirements, and that the LSST science community can access, visualize, interact with, and analyze LSST data products. The RSP will not be complete at the stage of commissioning.  We need to understand what functionality and level of service is needed.
+ 
+ %%%%%%%%% The following sections are common for all of DM  %%%%%%%%%	
+ 
+
+\subsection{Criteria for Completeness} 
+Successful implementation all the requirements in the DMSR. 
+This will be evidenced by the DM Verification Control Document \citeds{LDM-692}.
+
+The system as delivered meet the needs of the scientific community. 
+This will be evidenced by the system validation and operations rehearsals. 
+
+\subsection{Pre-Operations Interactions}
+
+Brief the Operations Team on current status of science verification, validation, and characterization.
+Ensure that operations team can run the DM system, interpret the results, and add make modifications as needed. 
+This will be done through the sequence of Data Previews,  hosted at the Interim Data Facility (IDF) planned by the pre-operations project. 
+Interactions with selected community brokers to ensure both they and the operations project are ready to 
+
+\subsection{Artifacts for Completion}
+
+The following artifacts will be provided 
+\begin{itemize}
+\item All DM Test plans and reports;
+\item The DM Verification Control Document, \citeds{LDM-692}, which provides the verification matrix for all DMSR requirements and Specifications, as defined in \cite{LSE-61};
+\item Non-compliance reports.
+\end{itemize}
