@@ -14,7 +14,7 @@ Broadly, this approach consists of three aspects:
 \end{enumerate}
 The DM Test Plan also provides a series of high-level milestones and the accompanying test schedule. 
 
-We regard the DM system as being successfully completed when all of the high-level requirements placed upon it, as defined in \cite{LSE-61} ? the Data Management System Requirements ? have been verified. 
+We regard the DM system as being successfully completed when all of the high-level requirements placed upon it, as defined in \citeds{LSE-61}, the Data Management System Requirements,  have been verified. 
 These requirements are verified by running tests, and recording the results of those tests in the LSST Jira system. 
 The approach that will be taken to verifying each requirement is described in \citeds{LDM-639} , the DM Acceptance Test Specification, which provides the dedicated test specifications for major components of Data Management.
 
@@ -25,7 +25,7 @@ The approach that will be taken to verifying each requirement is described in \c
 {\it Responsible: Eric Bellm (and Leanne Guy)}
 
 \subsubsection{Construction Completeness Criteria}
-The project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days;
+The project team shall demonstrate that the integrated LSST system can collect and process Prompt, time-domain (Level 1) data products, including the generation and distribution of alerts;
 
 \subsubsection{Objective} 
 
@@ -48,7 +48,8 @@ It should be clear, that at least in early commissioning, alert distribution and
 \subsubsection{Construction Completeness Criteria}
 The project team shall process the data from the one (or more) of the Science Verification Surveys to produce a Data Release and make it available to the Commissioning Team through the DM Science User Interface as well as a subset for the EPO Public User Interface;
 
-\subsubsection{Objective} 
+\subsubsection{Objective}
+The objective of this operational requirement is to ensure that the Data Release Processing (DRP) pipelines have been verified against requirements and produce the data release data products necessary for static science with LSST. 
 
 
 %%%%%% RSP %%%%%%%%%%%
@@ -84,6 +85,6 @@ Interactions with selected community brokers to ensure both they and the operati
 The following artifacts will be provided 
 \begin{itemize}
 \item All DM Test plans and reports;
-\item The DM Verification Control Document, \citeds{LDM-692}, which provides the verification matrix for all DMSR requirements and Specifications, as defined in \cite{LSE-61};
+\item The DM Verification Control Document, \citeds{LDM-692}, which provides the verification matrix for all DMSR requirements and Specifications, as defined in \citeds{LSE-61};
 \item Non-compliance reports.
 \end{itemize}
