@@ -1,1 +1,61 @@
 \section{Science Data Quality Assessment}  \label{sec:sdqa}
+
+
+\subsection{Operations Readiness Requirement}
+
+The project team shall demonstrate that the integrated LSST system can monitor and assess the quality of all data as it is being collected.
+
+\subsection{Objectives} 
+
+The Science Data Quality Assessment is a comprehensive system as it requires to monitor and assess quality of all data being collected, including raw and processed data. The system will collects, analyzes and records required information about the data quality and will make that information available to a variety of end users; observatory specialist, observatory scientists, downstream processing, the science planning/scheduling process and science users of the data. 
+
+Also, due to the fast cadence, diagnostic will heavily involve automated data analysis methods (such as data mining techniques for finding patterns in large datasets, and various machine learning regression techniques). But while the Science Data Quality Assessment will mostly be automated, it will also include a human-intensive components, due to the vast needs driven by the variety of end users.
+
+\subsubsection{Quality of the raw data} 
+
+The quality of the raw data is the results of the state of the telescope and the camera. This includes image quality, throughput performance and systematic errors. The throughput non-uniformity, especially for M2, can affect our ability of measuring fluxes across the focal plane for instance. The image quality is impacted by different aspect of the observatory such as: the dome seeing, the atmospherical seeing, the as-build qualities of the different optical systems, the active optics performance. 
+
+\subsubsection{Quality of the processed data}
+
+The information of the processed data relies on the calibration data products and the pipeline properties. In other words, the data assessment at this stage shall include the correction of the systematic errors. 
+
+
+\subsection{Data Analysis Tools}
+The Data Quality Assessment will rely on several tools such as the electronics logging, the engineering facility database, the science platform.  It is also important to have the right data visualization tools to facilitate the understanding of the correlation between the data quality and the observatory state. 
+
+The following sections describe examples essential components of QA:
+
+\subsubsection{Image quality}
+As mentioned above, the image quality is an important component of the LSST science mission and can be reflected by two important metrics: the PSF FWHM and the ellipticity. It is important to note here that because the ellipticity is an important metric needed to characterize galaxies among other astronomical objects, it is crucial to estimate the ellipticity coming from instrument signature and atmospheric signature.
+
+The first measurement of the image quality is done in the active optics pipeline, where the 4 wavefront sensors are directly measuring the wavefront in real time, in 4 different directions. The metric is the Zernike Polynomial up to the 22nd coefficient. This measurement should in theory average the atmospheric turbulence errors, giving an estimation of the optical error in the full system (Telescope + Camera). Warnings are in place for the cases when the error is out of the expected range. Note that tracking errors or vibrations of the Telescope Mount Assembly (TMA) or any other components can also be responsible for image quality degradations. 
+
+ Also, for each observation, the science pipeline will automatically publish a measurement of the PSF moments, including the ellipticity on the processed data. These results are displayed in real time on the visualization system and ready for more human data analysis. 
+The human interaction can happen at any time from the time we take the data and will correlate the PSF FWHM and ellipticity analysis with other metadata such as the integrated seeing, the dome seeing, temperature etc. It will involve simulation capabilities of the telescope, the camera systems and the atmosphere (such as PhoSim). The simulations use as built data for each elements (mirrors, lenses, etc..) measured during the diverse Integration and test phases.
+
+Finally depending on the results from these measurements, the scheduler will proceed to another observation of that field, with the goal of improving the data quality. 
+
+\subsubsection{Throughput}
+
+.....
+
+\subsection{Criteria for Completeness Description}
+
+We will work with the error budget tree and define pass or fail status at each of the entries. 
+The different tools are giving the proper responses in term of degradation of the image quality: 
+- PSF FHWM
+- Ellipticity
+- Wavefront measurements
+- Throughput measurements over the entire field
+ - Display of these metrics 
+
+\subsection{Pre-Operations Interactions}
+The pre-operation interaction include training the observing specialists to understand errors 
+
+
+\subsection{Artifacts for ORR}
+
+
+
+
+
