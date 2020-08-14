@@ -60,21 +60,36 @@ The following artifacts will be provided for all Dm elements:
 
 \subsubsection{Operations Readiness Requirement}
 The Project shall demonstrate the Prompt (Alert) Processing meets its requirements as defined in the DMSR (\citeds{LSE-61}) and the DPDD (\citeds{LSE-163}).  In particular the Prompt (Alert) Processing shall demonstrate its technical ability to meet the 60--second latency requirement for the transfer of data, processing difference images, and publishing detect sources from the Difference Imaging Analysis (DIA).
+Additionally, we shall demonstrate that nightly Solar System Processing (SSP) meets the DMSR requirements for identification of Solar System Objects.
 
 \subsubsection{Objectives} 
 
-The objective of this Operational Requirement is to ensure that the Prompt Processing pipelines have been verified against requirements and produce the Prompt data products necessary for LSST Transient and Solar System science, and to enable rapid follow-up of time domain events. 
+The objective of this Operational Requirement is to ensure that the Prompt Processing pipelines have been verified against requirements and produce the Prompt data products necessary for LSST Transient, Variable, and Solar System science, and to enable rapid follow-up of time domain events. 
 
-Prompt Processing includes the Prompt Processing pipelines, pre--recovery, MOPS, alert generation and distribution. Demonstration of an integrated LSST system for Prompt Processing must include, at some level, testing interfaces to the Minor Planet Center for Solar System Data products and with Community Brokers for Alerts. 
+Demonstration of an integrated LSST system for Prompt Processing must include, at some level, testing interfaces to the Minor Planet Center (MPC) for Solar System Data products and with Community Brokers (\citeds{LDM-612}) for Alerts. 
 
-We expect that the PPDB should be populated reasonably normally, once templates to subtract from are available.  In the Alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
+Prompt Processing requires templates images to enable Difference Image Analysis.
+During normal survey operations, templates will be produced as part of Data Release Processing.
+During commissioning and early operations, however, templates can only produced incrementally through separate execution of the Template Generation Payload as data of sufficient quality is taken in various areas of the sky.  
+Given the dependence of Prompt Processing on the availability of templates, validating DM's template generation capability is an important objective for Operations Readiness.
 
-We will run MOPS in commissioning to validate the solar system products pipelines, generate some solar system data products, and test the interfaces with the MPC. We could envision a stub SSObject record for already known asteroids; and some history (although obviously less than 12 months). Once the astrometry is sufficiently good (for asteroids is ~0.05-0.1"),  we can start regularly submitting to the MPC and testing the linking software. 
+Where and when templates are available, we expect Prompt Processing to proceed normally.
+The Prompt Products Database should be populated and alerts generated.  
+In the alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
 
-It should be clear, that at least in early commissioning, alert distribution and submission to the MPC  will be with substantial latency with respect to the SRD operations-era latencies.  
+We expect to provide a machine-learned spuriousness classifier for \DIASources.
+Good performance of such classifiers requires a large sample of labeled data reperesentative of the entire survey, which may not be available prior to routine survey operations.
+Accordingly, initial validation of the spuriousness classifier and a plan for incremental retraining in operations is sufficient for operational readiness.
+
+We will run Solar System Processing in commissioning to validate the solar system products pipelines, generate some solar system data products, and test the interfaces with the MPC. 
+We should be able to attribute Solar System objects known from other surveys and previously catalogued by the MPC with single-apparition LSST \DIASources.
+Once the astrometry is sufficiently good (for asteroids,  $\sim0.05--0.1^{\prime\prime}$), we can start regularly submitting to the MPC and testing the linking software. 
+
+It should be clear, that at least in early commissioning, alert distribution and submission to the MPC will be with substantial latency with respect to the SRD operations-era latencies.  
+Similarly, OSS completeness and purity metrics for both transients and solar system objects may not be achievable prior to the availability of DR1 templates.
 
 \subsubsection{Construction Completeness Criteria}
-The project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days.
+TBD
 
 \subsubsection{Pre-Operations Interactions}
 TBD
