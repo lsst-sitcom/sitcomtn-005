@@ -7,53 +7,89 @@ The project team shall demonstrate that the integrated LSST system can monitor a
 
 \subsection{Objectives} 
 
-The Science Data Quality Assessment is a comprehensive system as it requires to monitor and assess quality of all data being collected, including raw and processed data. The system will collects, analyzes and records required information about the data quality and will make that information available to a variety of end users; observatory specialist, observatory scientists, downstream processing, the science planning/scheduling process and science users of the data. 
+Science Data Quality Assessment is made up of a comprehensive system of tools to monitor and assess quality of all data as it is being collected including raw and processed data. The suite of tools have been designed to collect, analyze and record required information to assess the data quality and make that information available to a variety of end users; observatory specialist, observatory scientists, downstream processing, the science planning/scheduling process and science users of the data. 
 
-Also, due to the fast cadence, diagnostic will heavily involve automated data analysis methods (such as data mining techniques for finding patterns in large datasets, and various machine learning regression techniques). But while the Science Data Quality Assessment will mostly be automated, it will also include a human-intensive components, due to the vast needs driven by the variety of end users.
+The fast cadence of data collection requires highly automated data diagnostic and analysis methods (such as data mining techniques for finding patterns in large datasets, and various machine learning regression techniques). he Science Data Quality Assessment is mostly be automated, however it includes human-intensive components allowing further investigation and visualization of SDQA status.
 
-\subsubsection{Quality of the raw data} 
+Data quality assessment for Rubin must be carried out at a variety of cadences, which have different goals:
 
-The quality of the raw data is the results of the state of the telescope and the camera. This includes image quality, throughput performance and systematic errors. The throughput non-uniformity, especially for M2, can affect our ability of measuring fluxes across the focal plane for instance. The image quality is impacted by different aspect of the observatory such as: the dome seeing, the atmospherical seeing, the as-build qualities of the different optical systems, the active optics performance. 
+\begin{itemize}
 
-\subsubsection{Quality of the processed data}
+	\item Near real-time assessment of whether the data is scientifically useful;
+	\item Monitoring telemetry and imaging data to track the state of the integrated observatory, including the telescope, camera, networks and other supporting systems;
+	\item Analysis of the prompt processing properties and performance to determine if the alerts stream meets its requirements; and
+	\item Analysis of the data release processing properties and performance to determine if the static sky processing meets its requirements.
+	
+\end{itemize}
+
+By the time we make a data release the accumulated data quality analysis must be made available as part of the release artefacts.
+
+\subsubsection{Near Real--time Monitoring \& Assessment of the raw data quality} 
+
+The quality assessment of the raw data combines the results from the state of the telescope, the camera (see below) and technical properties of the images.  We will analyze each image as it is taken to a measure its properties both on the at the Summit Facility using the LSSTCam Diagnostic cluster and from properties determined during the prompt processing for alert production.  Performance properties will be based on measurements and characteristics derived from the images themselves and from daily calibration data, these include:
+
+\begin{itemize}
+
+	\item Readnoise, bias stability, gain variations, bitwise integrity etc...  from the CCD data;
+	\item Shape of the PSF, based on the three second moments, or equivalently effective FWHM, e1, e2;
+	\item Sky background level over the FPA;
+	\item Source position	sb relative to a reference catalog ({\it e.g. GAIA}) to monitor FPA stability and pointing acuracy; and
+	\item Source brightness relative to a reference catalogue ({\it e.g. GAIA}) to monitor system throughput and sensitivity.
+	
+\end{itemize}
+
+Together, these data enable us to determine if the data are within performance parameters to label the visit as "good".   Tooling will be provided by the construction project to allow users to monitor trends in these quantities (e.g. as a function of time and where the telescope is pointing;  as a function of position in the focal plane).  These will initially be provided by the LOVE interface (see below), although more detailed analysis may require additional tooling.  In some cases, data from the Rubin Auxiliary Telescope (RAT) may be used to help interpret trends discovered in the LSSTCam data.  Not discussed here is the quality analysis needed to determine that the RAT is taking sufficiently good data.
+
+\subsubsection{Longer Term Assessment}
+
+TBD
+
+\subsubsection{Assessing the quality of the processed data}
 
 The information of the processed data relies on the calibration data products and the pipeline properties. In other words, the data assessment at this stage shall include the correction of the systematic errors. 
 
+\subsection{SDQA Tools for analysis}
 
-\subsection{Data Analysis Tools}
-The Data Quality Assessment will rely on several tools such as the electronics logging, the engineering facility database, the science platform.  It is also important to have the right data visualization tools to facilitate the understanding of the correlation between the data quality and the observatory state. 
+Science Data Quality Assessment will rely on a suite of tools including as the electronic logging, the engineering facility database (EFD), and the Rubin Science Platform (RSP).  There is also a complementary set data visualization tools to facilitate the understanding of the correlation between the data quality and the observatory state. 
 
-The following sections describe examples essential components of QA:
+These tools include:
 
-\subsubsection{Image quality}
-As mentioned above, the image quality is an important component of the LSST science mission and can be reflected by two important metrics: the PSF FWHM and the ellipticity. It is important to note here that because the ellipticity is an important metric needed to characterize galaxies among other astronomical objects, it is crucial to estimate the ellipticity coming from instrument signature and atmospheric signature.
+\begin{itemize}
 
-The first measurement of the image quality is done in the active optics pipeline, where the 4 wavefront sensors are directly measuring the wavefront in real time, in 4 different directions. The metric is the Zernike Polynomial up to the 22nd coefficient. This measurement should in theory average the atmospheric turbulence errors, giving an estimation of the optical error in the full system (Telescope + Camera). Warnings are in place for the cases when the error is out of the expected range. Note that tracking errors or vibrations of the Telescope Mount Assembly (TMA) or any other components can also be responsible for image quality degradations. 
+	\item Rubin Science Platform (RSP) -- used for investigative ad--hoc analysis (\citeds{lse-319});  the RSP itself through it's web based porthole and Jupyter Lab interface provides significant visualization capabilities;
+	\item Engineering Facility Database -- accessible through science platform and pre-defined dashboards;
+	\item LOVE - LSST Observing Visualization Environment used to have standardized dashboards and visualization of the system state;
+	\item SQuaSH - the Science Quality System Harness (\citeds{sqr-009})
 
- Also, for each observation, the science pipeline will automatically publish a measurement of the PSF moments, including the ellipticity on the processed data. These results are displayed in real time on the visualization system and ready for more human data analysis. 
-The human interaction can happen at any time from the time we take the data and will correlate the PSF FWHM and ellipticity analysis with other metadata such as the integrated seeing, the dome seeing, temperature etc. It will involve simulation capabilities of the telescope, the camera systems and the atmosphere (such as PhoSim). The simulations use as built data for each elements (mirrors, lenses, etc..) measured during the diverse Integration and test phases.
-
-Finally depending on the results from these measurements, the scheduler will proceed to another observation of that field, with the goal of improving the data quality. 
-
-\subsubsection{Throughput}
-
-.....
+\end{itemize}
 
 \subsection{Criteria for Completeness Description}
 
-We will work with the error budget tree and define pass or fail status at each of the entries. 
-The different tools are giving the proper responses in term of degradation of the image quality: 
-- PSF FHWM
-- Ellipticity
-- Wavefront measurements
-- Throughput measurements over the entire field
- - Display of these metrics 
+The SDQA shall monitor and record the properties of the system error budget tree, including image quality and throughput, and define pass or fail status at each of the primary entries entries.   These include the following terms of the image quality: 
+
+\begin{itemize}
+
+	\item PSF FHWM;
+	\item PSF shape ellipticity as described by second moments;
+	\item System wavefront measurements for each visit; and
+	\item Throughput measurements over the entire field of view.
+		
+\end{itemize}
+
+Tooling for evaluating SDQA shall demonstrate the ability to display performance on a visit by visit basis as well as being able to show the history of performance metric over a user defined span of time.
 
 \subsection{Pre-Operations Interactions}
 The pre-operation interaction include training the observing specialists to understand errors 
 
-
 \subsection{Artifacts for ORR}
+
+\begin{itemize}
+
+	\item Demonstrated functional tool kit as described above;
+	\item Code validation tool kit to quantify software performance;
+	\item Derived reporting from the Science Verification/Validation survey(s)
+	
+\end{itemize}
 
 
 
