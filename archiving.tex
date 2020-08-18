@@ -1,51 +1,44 @@
-\section{Recording and Archiving of System State Metadata}  \label{sec:metadata}
+\section{Recording and Archiving of the System State \& Technical Data}  \label{sec:metadata}
 
 \subsection{Operations Readiness Requirement}
 
-The Rubin Project Team shall demonstrate that relevant metadata are being collected and archived.
+The Rubin Project Team shall demonstrate that relevant technical data about the system state and surrounding conditions during which the survey data are being collected are recorded and  archived.
 
 \subsection{Objectives:}
 
-The objective with this requirement is to ensure that the technical state of the environment and hardware/software systems during the time of survey data collection is recorded with sufficient fidelity to be used in support of subsequent processing to produce the LSST science products. This is of particular importance for the determination and correction of systematics in the data as the survey progresses and statistics improve.  Additionally, the metadata record in required to assure efficient operation and maintenance of the observing facility.   The primary repository of this metadata is the Engineering Facility Database (EFD) - having two components: 1) a searchable SQL Cluster based capture of "house keeping" telemetry and 2) the Large File Annex for non-telemetry records (e.g. configuration files, images, other binary files outside the science pixel data etc...).
+The objective with this requirement is to ensure that the technical state of the hardware/software systems and the surrounding environment are recorded during the time of survey data collection with sufficient fidelity to be used in support of subsequent processing to produce the LSST science products. This is of particular importance for the determination and correction of systematics in the science data as the survey progresses and statistics improve.  Additionally, this includes the technical data record required to assure efficient operation and maintenance of the observing facility.   The primary repository of this technical data is the Engineering Facility Database (EFD) - it having two components: 1) a searchable database that captures the time dependent "house keeping" data and 2) the Large File Annex for non-telemetry records (e.g. configuration files, images, other binary files outside the science pixel data etc...).
 
-Technical Metadata at the time of each visit includes but not limited to:
+Technical data at the time of each observation ({\it e.g.} visit) includes but is not limited to:
 
 \begin{itemize}
-
-	\item Meteorological state on the Summit;
+	\item Technical "house keeping" data which includes telemetry, events and commands from each subsystem component as published to the EFD;
+	\item Software version configuration status of all operating subsystems;
+	\item Operating configuration parameters for all active subsystems.
+	\item Meteorological and the environmental state on the Summit;
 	\item Environmental conditions in the dome interior;
-	\item Atmospheric seeing as measured by the tower mounted DIMM;
-	\item Sky transparency map from the All-Sky Camera;
-	\item Technical "house keeping" telemetry from each subsystem component as published to the EFD;
-	\item Software version configuration status of all operating systems; and
-	\item Configuration parameters of all active subsystems.
-	
+	\item State of atmospheric turbulences -- {\it e.g.} seeing; and
+	\item State of sky transparency.
 \end{itemize}
 
 \subsection{Criteria for Completeness}
 
-Satisfying this criteria includes at a minimum:
-
+Satisfying these criteria includes at a minimum:
 \begin{itemize}
-
-	\item Demonstrate the technical data (see above) are being recorded by the EFD at >99\% (TBC) reliability level - e.g. no significant dropouts in the live database at the Summit Facility;
-	\item Demonstrate the recorded data are being archived for long term access - copy at Base Facility in Chile and Copy at NCSA (possibly Interim Data Facility);
-	\item Access to the technical data is achievable through standard monitoring dashboards;
-	\item Access to the technical data is chewable through use customizable GUI interface(s); and
-	\item Technical data are queryable through Rubin Science Platform tools - e.g. Jupyter Lab notebooks and WEB interface.
-	
+	\item Demonstrate the technical data (see above) are being recorded at the Summit Facility by the EFD at >99\% (TBC) reliability level for a period of at least 30 days - e.g. no significant dropouts in the live database at the Summit Facility;
+	\item Demonstrate the Summit Facility database is being mirrored to an EFD at the Base Facility with a lag time of no more than 35 seconds ({\it e.g.} one nominal visit; TBC);
+	\item Demonstrate the recorded data are being archived for long term access - copy at Base Facility in Chile and a copy at NCSA (possibly the final US Data Center - interim or otherwise);
+	\item Access to the technical data is achievable through standard monitoring dashboards from all support centers, including the Summit Facility, Base Facility, Headquarters for Operations in Tucson and US Data Center;
+	\item Access to the technical data through the use customizable GUI interface(s) and dashboards; and
+	\item Technical data are queryable through Rubin Science Platform tools - e.g. Jupyter Lab notebooks and WEB interface.	
 \end{itemize}
 
 \subsection{Pre--Operations Interactions}
 
-Transfer and archiving the EFD at the Interim Data Center would be required for external queries.
+Transfer and archiving the EFD from the Base Facility to the US Data Center (when that decision is made), for the purpose of construction completeness evaluation the US Data Center is located at NCSA. US Data Center, interim  or otherwise would be required for external queries from users outside the immediate Rubin Observatory Project.
 
 \subsection{Artifacts for ORR}
-
 \begin{itemize}
-
-	\item Report documenting minimum criteria as defined in the discussion section above
-	\item SDK and example code for custom dashboards and dashboard templates available through software repository(s) - e.g. GitHub
-	\item Example code for Rubin Science Platform queries through software repository - e.g. GitHub
-	
+	\item A report documenting minimum criteria as defined in the criteria section above;
+	\item An SDK and example code for custom dashboards and dashboard templates available through a software repository(s) - {\it e.g.} GitHub or similar; and
+	\item Example code for Rubin Science Platform queries to the EFD available through a software repository - {\it e.g.} GitHub or similar.	
 \end{itemize}
