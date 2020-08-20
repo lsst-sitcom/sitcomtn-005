@@ -42,14 +42,15 @@ Ensure that operations team can run the DM system, interpret the results, and ad
 This will be done through the sequence of Data Previews,  hosted at the Interim Data Facility (IDF) planned by the pre-operations project. 
 Interactions with selected community brokers to ensure both they and the operations project are ready to 
 
-\subsection{Artifacts for Completion}
+\subsection{Artifacts for ORR}
 
 The following artifacts will be provided for all Dm elements:
 
 \begin{itemize}
 	\item All DM Test plans and reports;
 	\item The DM Verification Control Document (\citeds{LDM-692}), which provides the verification matrix for all DMSR requirements and Specifications, as defined in \citeds{LSE-61};
-	\item Non-compliance reports.
+	\item Non-compliance reports; and
+	\item Source code repositories with documentation.
 \end{itemize}
 
 % LPG:Not sure this level of detail is needed in this document?
@@ -58,7 +59,6 @@ The following artifacts will be provided for all Dm elements:
 \subsection{Prompt Processing}
 % {\it Responsible: Eric Bellm (and Leanne Guy)}
 
-\subsubsection{Operations Readiness Requirement}
 The Project shall demonstrate the Prompt (Alert) Processing meets its requirements as defined in the DMSR (\citeds{LSE-61}) and the DPDD (\citeds{LSE-163}).  In particular the Prompt (Alert) Processing shall demonstrate its technical ability to meet the 60--second latency requirement for the transfer of data, processing difference images, and publishing detect sources from the Difference Imaging Analysis (DIA).
 Additionally, we shall demonstrate that nightly Solar System Processing (SSP) meets the DMSR requirements for identification of Solar System Objects.
 
@@ -78,7 +78,7 @@ The Prompt Products Database should be populated and alerts generated.
 In the alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
 
 We expect to provide a machine-learned spuriousness classifier for \DIASources.
-Good performance of such classifiers requires a large sample of labeled data reperesentative of the entire survey, which may not be available prior to routine survey operations.
+Good performance of such classifiers requires a large sample of labeled data representative of the entire survey, which may not be available prior to routine survey operations.
 Accordingly, initial validation of the spuriousness classifier and a plan for incremental retraining in operations is sufficient for operational readiness.
 
 We will run Solar System Processing in commissioning to validate the solar system products pipelines, generate some solar system data products, and test the interfaces with the MPC. 
@@ -88,13 +88,13 @@ Once the astrometry is sufficiently good (for asteroids,  $\sim0.05--0.1^{\prime
 It should be clear, that at least in early commissioning, alert distribution and submission to the MPC will be with substantial latency with respect to the SRD operations-era latencies.  
 Similarly, OSS completeness and purity metrics for both transients and solar system objects may not be achievable prior to the availability of DR1 templates.
 
-\subsubsection{Construction Completeness Criteria}
+\subsubsection{Criteria for Completenes}
 TBD
 
 \subsubsection{Pre-Operations Interactions}
 TBD
 
-\subsubsection{Artifacts for Completion}
+\subsubsection{Artifacts for ORR}
 TBD
 
 %%%%%%%%%% DRP %%%%%%%%%%%%%%%%%
@@ -102,37 +102,31 @@ TBD
 \subsection{Data Release Processing}
 % {\it Responsible: Jim Bosch (and Leanne Guy)}
 
-\subsubsection{Operations Readiness Requirement}
-TBD
-
 \subsubsection{Objective}
 The objective of this operational requirement is to ensure that the Data Release Processing (DRP) pipelines have been verified against requirements and produce the data release data products necessary for static science with LSST. 
 
 
-\subsubsection{Construction Completeness Criteria}
+\subsubsection{Criteria for Completenes}
 The project team shall process the data from the one (or more) of the Science Verification Surveys to produce a Data Release and make it available to the Commissioning Team through the DM Science User Interface as well as a subset for the EPO Public User Interface.
 
 \subsubsection{Pre-Operations Interactions}
 TBD
 
-\subsubsection{Artifacts for Completion}
+\subsubsection{Artifacts for ORR}
 TBD
 
 %%%%%% RSP %%%%%%%%%%%
 \subsection{Rubin Science Platform}
 % {\it Responsible: Gregory Dubois-Felsmann (and Leanne Guy)}
 
-\subsubsection{Operations Readiness Requirement}
-TBD
-
 \subsubsection{Objectives} 
 The objectives of this Operational Requirement are to ensure that the Rubin Science Platform (RSP), including the DM Science User Interface, have been verified against requirements, and that the LSST science community can access, visualize, interact with, and analyze LSST data products. The RSP will not be complete at the stage of commissioning.  We need to understand what functionality and level of service is needed.
 
-\subsubsection{Operations Readiness Criteria}
+\subsubsection{Criteria for Completeness}
 The project team shall demonstrate that the Rubin Science Platform can deliver data and data products; and that the interfaces aimed at the general public are functional.
 
 \subsubsection{Pre-Operations Interactions}
 TBD
 
-\subsubsection{Artifacts for Completion}
+\subsubsection{Artifacts for ORR}
 TBD

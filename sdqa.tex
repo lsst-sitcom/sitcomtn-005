@@ -22,23 +22,23 @@ Data quality assessment for Rubin must be carried out at a variety of cadences, 
 	
 \end{itemize}
 
-By the time we make a data release the accumulated data quality analysis must be made available as part of the release artefacts.
+By the time we make a data release the accumulated data quality analysis must be made available as part of the release artifacts.
 
 \subsubsection{Near Real--time Monitoring \& Assessment of the raw data quality} 
 
-The quality assessment of the raw data combines the results from the state of the telescope, the camera (see below) and technical properties of the images.  We will analyze each image as it is taken to a measure its properties both on the at the Summit Facility using the LSSTCam Diagnostic cluster and from properties determined during the prompt processing for alert production.  Performance properties will be based on measurements and characteristics derived from the images themselves and from daily calibration data, these include:
+The quality assessment of the raw image data combines the results from the state of the telescope, the camera (see below) and technical properties of the images.  Each will be analyzed as it is taken to a measure its technical properties both on the at the Summit Facility using the LSSTCam Diagnostic cluster and from properties determined during the prompt processing for alert production.  Performance properties will be based on measurements and characteristics derived from the images themselves and from daily calibration data, these include:
 
 \begin{itemize}
 
-	\item Readnoise, bias stability, gain variations, bitwise integrity etc...  from the CCD data;
-	\item Shape of the PSF, based on the three second moments, or equivalently effective FWHM, e1, e2;
-	\item Sky background level over the FPA;
-	\item Source position	sb relative to a reference catalog ({\it e.g. GAIA}) to monitor FPA stability and pointing acuracy; and
-	\item Source brightness relative to a reference catalogue ({\it e.g. GAIA}) to monitor system throughput and sensitivity.
+	\item Sensor readnoise, bias and gain variations, bitwise integrity etc...  from the CCD data;
+	\item Properties of the measured PSF, based on the three second moments, or equivalently effective FWHM, e1, e2;
+	\item Measured sky background level over the full FPA at amplifier level resoution;
+	\item Measured source positions and errors relative to a reference catalog ({\it e.g. GAIA}) to monitor FPA stability and pointing accuracy; and
+	\item Measured source fluxes and errors relative to a reference catalogue ({\it e.g. GAIA}) to monitor system throughput, sensitivity and algorithm processing.
 	
 \end{itemize}
 
-Together, these data enable us to determine if the data are within performance parameters to label the visit as "good".   Tooling will be provided by the construction project to allow users to monitor trends in these quantities (e.g. as a function of time and where the telescope is pointing;  as a function of position in the focal plane).  These will initially be provided by the LOVE interface (see below), although more detailed analysis may require additional tooling.  In some cases, data from the Rubin Auxiliary Telescope (RAT) may be used to help interpret trends discovered in the LSSTCam data.  Not discussed here is the quality analysis needed to determine that the RAT is taking sufficiently good data.
+At a minimum, these metrics enable the Project to determine if the data are within performance parameters to label the visit as "good".   Tooling will be provided by the Construction Project that enable users to monitor trends in these quantities ({it. e.g.} as a function of time and where the telescope is pointing and as a function of position in the focal plane.  A reference set of tools will initially be provided by the LOVE interface along with more detailed analysis tooling (as described below).  In some cases, data from the Rubin Auxiliary Telescope (RAT) will be used to interpret trends the LSSTCam data.  The quality analysis needed to determine that the RAT is taking sufficiently good data will use the same tooling as provided for the main survey data.
 
 \subsubsection{Longer Term Assessment}
 
