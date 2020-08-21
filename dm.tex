@@ -1,84 +1,92 @@
-\section{Verification of Data Management  System Specifications (\citeds{LSE-61})}  \label{sec:dm}
+% Audience Ed Ajhar and Kathy Turner, Helmut Meineke, Matt Mountain
+% Start each section with a 2-3 line intro to what it is 
+% dCould drop ORR and Obj subsections 
+% Sentence ... prompt processing is .. see sec X in doc Y
+%% PP/DRP consistes of the following functional elements - complete when these are complete 
 
-\subsection{General Verification of Data Management System Requirements  \citeds{LSE-61} }
-% {\it Responsible: Leanne Guy and Wil O'Mullane}
 
-The Data Management (DM) subsystem will be verified and validated again the {\it Data Management System Requirements} -- (\citeds{LSE-61}) and the  {\it Data Product Definition Document} -- DPDD (\citeds{LSE-163}).
+\section{Verification of Data Management System Specifications}  \label{sec:dm}
 
-Prior to start of commissioning and operations the data processing will be verified to extent possible using precursor data, final verification and construction completeness will be determined with data obtained during the commissioning phase of the project.  In addition, functional verification will be achieved through testing and operations rehearsals/data challenges.  The approach to verification and validation adopted by the LSST Data Management Subsystem is given in the DM Test Plan (\citeds{LDM-503}).   The DM system will considered being successfully completed when all of the high-level requirements placed upon it, as defined in the {\it Data Management System Requirements} (DMSR, \citeds{LSE-61} ) have been verified.  The requirements have be categorized into by priorities, where 1a requirements will be verified to start commissioning, and 1b requirements are to be verified to complete the construction project and requirement in the categories 2 and 3 are essentially best effort for construction completeness (\citeds{LSE-61}).
+The Data Management System provides the functionality necessary to process the raw image data into usable data products, and to make those data products accessible to the Rubin scientific community.
 
+\subsection{Operations Readiness Requirement}
+The project team shall demonstrate that the integrated LSST Data Management Subsystem has met the technical specifications enumerated in the  Data Management System Requirements  \citeds{LSE-61}. 
+
+\subsection{Objectives}
+The objective of this operational requirement is to ensure that the integrated as-delivered Data Management System (DMS), including all supporting infrastructure, has been verified against its requirements. 
+The top-level requirements for the DMS are given in the Data Management System Requirements  \citeds{LSE-61}, and are derived from the Observatory System Specifications (OSS), \citeds{LSE-30}, which in turn are derived from the LSST System Requirements (LSR), \citeds{LSE-29} and the Science Requirements Document (SRD) \citeds{LPM-17}. 
+The DMSR is complemented by the Data Product Definition Document (DPDD), \citeds{LSE-163},  which describes the data products to be delivered by the Large Synoptic Survey Telescope (LSST).
+
+\subsubsection{Approach to verification and validation}\label{sec:dm-approach}
+
+The approach to verification and validation adopted by the LSST Data Management Subsystem is described in detail in the DM Test Plan (\citeds{LDM-503}), which provides a series of high-level milestones and the accompanying the test schedule. 
 Broadly, this approach consists of three aspects:
-
 \begin{enumerate}
 	\item Verification that the Data Management system as delivered meets the requirements placed upon it;
 	\item Validation that the system as delivered meets the needs of the scientific community;
 	\item Rehearsing the sustained operation of the system in operational scenarios.
 \end{enumerate}
+The approach to verifying each individual requirement is described in the DM Acceptance Test Specification, (\citeds{LDM-639}), which provides the dedicated test specifications. 
 
-The DM system will be considered successfully completed when all of the high-level requirements placed upon it, as defined in \citeds{LSE-61} the Data Management System Requirements (DMSR) have been verified. 
+Prior to start of commissioning and operations, the data processing system will be verified to the extent possible using precursor data. 
+Final verification and construction completeness will be determined with data obtained during the commissioning phase of the project and in collaboration with the commissioning team, \ref{sec:svs}.  
+Functional verification will be achieved through a series of operations rehearsals and data challenges.  
 
-The DM Test Plan provides a series of high-level milestones and the accompanying the test schedule. 
+All requirements in the DMSR have been prioritized as follows: 
+\begin{enumerate}
+	\item "This must be done to enter commissioning (a) or operations (b); no waivers will be granted if not met."
+		\begin{itemize}
+			\item 1a: Must be demonstrated to be working before the start of the commissioning period.
+			\item1b: Must be demonstrated to be working before the start of the observing.
+		\end{itemize}
+	\item  "Should be done to enter Operations; but waiver likely to be granted if not met," i.e., we could enter Operations without this fulfilled, for first 3 years.
+	\item  "Overall capability/efficiency/ease of use/etc., may be reduced but science will not critically suffer if not done." Could enter operations without this requirement fulfilled, and have the soperations team decide whether they want to pursue it.
+\end{enumerate}
+ 
+\subsection{Criteria for Completeness} \label{sec:dm-completeness}
+The DM system will be considered successfully complete when all high-level requirements in the DMSR have been verified. 
+At a minimum, all priority 1 requirements must be verified at the end of construction.
+The DM Verification Control Document, \citeds{LDM-692},  provides an overview of the verification status of the Data Management Subsystem with respect to its requirements.
 
-We regard the DM system as being successfully completed when all of the high-level requirements placed upon it, as defined in \citeds{LSE-61}, the Data Management System Requirements,  have been verified.  These requirements are verified by running tests, and recording the results of those tests in the LSST Jira system.  The approach that will be taken to verifying each requirement is described in the {\it DM Acceptance Test Specification,} (\citeds{LDM-639}), which provides the dedicated test specifications for major components of Data Management.
+\subsection{Pre-Operations Interaction}
+None, unless there are non-compliance issues against the ORR requirements and specifications.
 
-%%%%%%%%% The following sections are common for all of DM  %%%%%%%%%	
-
-\subsection{Objectives}
-The following is common for all Data Management/Processing elements:
-
-The Data Management/Processing elements provide the functionality necessary to process the raw image data into usable data products and to make those data products accessible to the general user community.
-
-\subsection{Criteria for Completeness} 
-Successful implementation all the requirements in the DMSR. 
-This will be evidenced by the DM Verification Control Document (\citeds{LDM-692}).
-
-The system as delivered meet the needs of the scientific community. 
-This will be evidenced by the system validation and operations rehearsals. 
-
-\subsection{Pre-Operations Interactions}
-
-Brief the Operations Team on current status of science verification, validation, and characterization.
-Ensure that operations team can run the DM system, interpret the results, and add make modifications as needed. 
-This will be done through the sequence of Data Previews,  hosted at the Interim Data Facility (IDF) planned by the pre-operations project. 
-Interactions with selected community brokers to ensure both they and the operations project are ready to 
-
-\subsection{Artifacts for Completion}
-
-The following artifacts will be provided for all Dm elements:
-
+\subsection{Artifacts for Completion} \label{sec:dm-artifacts}
+The following artifacts will be provided:
 \begin{itemize}
-	\item All DM Test plans and reports;
-	\item The DM Verification Control Document (\citeds{LDM-692}), which provides the verification matrix for all DMSR requirements and Specifications, as defined in \citeds{LSE-61};
-	\item Non-compliance reports.
-\end{itemize}
+	\item A verification matrix containing entries for all DMSR requirements (\citeds{LSE-61}) and specifications (\citeds{LDM-639}). Methods, inspections, demonstration, analysis or test, shall be identified for every DMSR requirement. This verification matrix is provided by the DM Verification Control Document (\citeds{LDM-692});
+	\item Final compliance status, including all non-compliance reports;
+	\item All Data Management test plans and reports for all test campaigns; 
+	\item A Performance characterization report;
+	\item System documentation and code repositories;
+	\item Drafts of all construction papers. 
+\end{itemize} 
 
-% LPG:Not sure this level of detail is needed in this document?
-% Documentation Automation for the Verification and Validation of Rubin Observatory Software is described in \citeds{dmtn-140}
-
+%%%% Prompt Processing %%%%%%
+% -prompt needs nw with a given latency - need moderate throughput, high reliabilty  (1 visit at a time)
 \subsection{Prompt Processing}
 % {\it Responsible: Eric Bellm (and Leanne Guy)}
-
-\subsubsection{Operations Readiness Requirement}
+ % Was in ORC -- move about 
+ 
 The Project shall demonstrate the Prompt (Alert) Processing meets its requirements as defined in the DMSR (\citeds{LSE-61}) and the DPDD (\citeds{LSE-163}).  In particular the Prompt (Alert) Processing shall demonstrate its technical ability to meet the 60--second latency requirement for the transfer of data, processing difference images, and publishing detect sources from the Difference Imaging Analysis (DIA).
 Additionally, we shall demonstrate that nightly Solar System Processing (SSP) meets the DMSR requirements for identification of Solar System Objects.
 
 \subsubsection{Objectives} 
-
 The objective of this Operational Requirement is to ensure that the Prompt Processing pipelines have been verified against requirements and produce the Prompt data products necessary for LSST Transient, Variable, and Solar System science, and to enable rapid follow-up of time domain events. 
-
 Demonstration of an integrated LSST system for Prompt Processing must include, at some level, testing interfaces to the Minor Planet Center (MPC) for Solar System Data products and with Community Brokers (\citeds{LDM-612}) for Alerts. 
 
-Prompt Processing requires templates images to enable Difference Image Analysis.
-During normal survey operations, templates will be produced as part of Data Release Processing.
-During commissioning and early operations, however, templates can only produced incrementally through separate execution of the Template Generation Payload as data of sufficient quality is taken in various areas of the sky.  
-Given the dependence of Prompt Processing on the availability of templates, validating DM's template generation capability is an important objective for Operations Readiness.
-
+%% All of this is details of the verification process that should be captured in the requirements/test spec - or in the criteria 
+%Prompt Processing requires templates images to enable Difference Image Analysis.
+%During normal survey operations, templates will be produced as part of Data Release Processing.
+%During commissioning and early operations, however, templates can only produced incrementally through separate execution of the Template Generation Payload as data of sufficient quality is taken in various areas of the sky.  
+Given the dependence of Prompt Processing on the availability of templates, validating DM's template generation capability is an important objective for Operations Readiness. 
 Where and when templates are available, we expect Prompt Processing to proceed normally.
-The Prompt Products Database should be populated and alerts generated.  
-In the alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
+
+%The Prompt Products Database should be populated and alerts generated.  
+%In the alert packets, there would be less than 12 months of previous DIASource records available, and, as there will be no available DR in commissioning, providing matching Object IDs would depend on what DRP data products were available. 
 
 We expect to provide a machine-learned spuriousness classifier for \DIASources.
-Good performance of such classifiers requires a large sample of labeled data reperesentative of the entire survey, which may not be available prior to routine survey operations.
+Good performance of such classifiers requires a large sample of labeled data representative of the entire survey, which may not be available prior to routine survey operations.
 Accordingly, initial validation of the spuriousness classifier and a plan for incremental retraining in operations is sufficient for operational readiness.
 
 We will run Solar System Processing in commissioning to validate the solar system products pipelines, generate some solar system data products, and test the interfaces with the MPC. 
@@ -87,52 +95,61 @@ Once the astrometry is sufficiently good (for asteroids,  $\sim0.05--0.1^{\prime
 
 It should be clear, that at least in early commissioning, alert distribution and submission to the MPC will be with substantial latency with respect to the SRD operations-era latencies.  
 Similarly, OSS completeness and purity metrics for both transients and solar system objects may not be achievable prior to the availability of DR1 templates.
+%%
 
-\subsubsection{Construction Completeness Criteria}
-TBD
+%  Reference the high-level criteria for completeness and highlight 3 points of interest for this component 
+\subsubsection{Criteria for Completeness}
+The criteria for completeness are described in \ref{sec:dm-completeness}. 
 
 \subsubsection{Pre-Operations Interactions}
-TBD
+Validation and operations readiness will be assessed via the operations rehearsals and the DPs. 
+Distribution of DPs by the early operations teams
+Results will be made available to the community - early operations team 
+Through the planned data previews 
 
 \subsubsection{Artifacts for Completion}
-TBD
+The high-level artifacts for completion of the Prompt Processing pipelines are detailed in \ref{sec:dm-artifacts}.  
 
 %%%%%%%%%% DRP %%%%%%%%%%%%%%%%%
-
 \subsection{Data Release Processing}
 % {\it Responsible: Jim Bosch (and Leanne Guy)}
 
-\subsubsection{Operations Readiness Requirement}
-TBD
+\subsubsection{Objectives}
+The objective of this Operational Requirement is to ensure that the Data Release Processing pipelines have been verified against requirements  and produce the Data Release data products necessary for static LSST science. 
 
-\subsubsection{Objective}
-The objective of this operational requirement is to ensure that the Data Release Processing (DRP) pipelines have been verified against requirements and produce the data release data products necessary for static science with LSST. 
+Data Release Production involves not just the image processing pipeline,  which is the component most visible to scientists, but integration with and usage of many other DM deliverables as well, including:
+\begin{itemize}
+\item data access middleware that archives and organizes both raw data from the observatory and processing outputs;
+\item process control middleware that provides a harness for running the pipelines at scale;
+\item systems for transferring processing outputs to components of the Rubin Science Platform (RSP) for user access, including database ingest;
+\item hardware, operators, and other production services.
+\end{itemize}
 
-
-\subsubsection{Construction Completeness Criteria}
-The project team shall process the data from the one (or more) of the Science Verification Surveys to produce a Data Release and make it available to the Commissioning Team through the DM Science User Interface as well as a subset for the EPO Public User Interface.
+\subsubsection{Criteria for Completeness}
+The criteria for completeness are described in \ref{sec:dm-completeness}. 
 
 \subsubsection{Pre-Operations Interactions}
-TBD
+None, unless there are non-compliance issues against the DMSR requirements and specifications.
 
 \subsubsection{Artifacts for Completion}
-TBD
+The high-level artifacts for completion of the DRP pipelines are detailed in \ref{sec:dm-artifacts}.   
 
 %%%%%% RSP %%%%%%%%%%%
 \subsection{Rubin Science Platform}
 % {\it Responsible: Gregory Dubois-Felsmann (and Leanne Guy)}
 
-\subsubsection{Operations Readiness Requirement}
-TBD
+% What are the objectives that allow us to sign off on this and hand it over - some of this in the science validation survey 
+% Objective - to verify the delivered system against the requiremetns in the DMSR (4.2) - can I just cite that and highlight the main goals
 
 \subsubsection{Objectives} 
-The objectives of this Operational Requirement are to ensure that the Rubin Science Platform (RSP), including the DM Science User Interface, have been verified against requirements, and that the LSST science community can access, visualize, interact with, and analyze LSST data products. The RSP will not be complete at the stage of commissioning.  We need to understand what functionality and level of service is needed.
+The objectives of this Operational Requirement are to ensure that the Rubin Science Platform (RSP), including the DM Science User Interface, have been verified against requirements, and that the LSST science community can access, visualize, interact with, and analyze LSST data products. 
+The high-level vision of the Rubin Science Platform describing an integrated platform of three distinct aspects is described in \citeds{LSE-319}
 
-\subsubsection{Operations Readiness Criteria}
-The project team shall demonstrate that the Rubin Science Platform can deliver data and data products; and that the interfaces aimed at the general public are functional.
+\subsubsection{Criteria for Completeness}
+The high-level criteria for completeness are detailed in \ref{sec:dm-completeness}. Specifically for the RSP, this means that the scientific community can retrieve the Rubin data products with a reasonable latency. The RSP will not be complete at the stage of commissioning. 
 
 \subsubsection{Pre-Operations Interactions}
-TBD
+None, unless there are non-compliance issues against the DMSR requirements and specifications.
 
 \subsubsection{Artifacts for Completion}
-TBD
+The high-level artifacts for completion of the RSP are detailed in \ref{sec:dm-artifacts}.   
