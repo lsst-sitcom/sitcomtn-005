@@ -5,3 +5,15 @@
 #
 # Example:
 #   MIA:Missing In Action
+
+AI:Artificial Intelligence
+AVM:Audio--Visual Management
+CAD:Computer Aided Design
+GAIA:Global Astrometric Interferometry for Astrophysics
+FRACAS:Failure Reporting, Analysis and Corrective Action System
+LVV:LSST Verification and Validation
+RAT:Rubin Auxiliary Telescope
+SDK:Software Development Kit
+SITCOMTN:System Integration, Test and Commissioning Technical Note
+WEB:World Wide Web
+
