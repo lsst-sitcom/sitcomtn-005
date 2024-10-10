@@ -3,9 +3,21 @@
 \subsection{Operations Readiness Requirement}
 The project team shall demonstrate that the integrated LSST systems (Camera, Telescope \& Site and Data Management subsystems) as well as the Education and Public Outreach (EPO) system have met the technical specifications enumerated in the LSST Observatory System Specifications (\citeds{LSE-30}).
 
-\subsection{Objectives}
+%new_hd
+The requirements in \citeds{LSE-30} have been marked according to the CCR where they can be earliest verified. 
+The distribution between the CCRs is shown in Figure~\ref{CCRs_overview}.
 
-The main objective of this Operations Readiness Requirement is to verify the system specifications in the OSS (\citeds{LSE-30}) are proven and well documented.  The OSS is essentially the highest-level document describing the basic LSST system technical architecture.  It contains sections derived from the OSS on the following broad topics:
+\begin{figure}[htbp]
+\begin{center}
+%\includegraphics[width=1\textwidth]{./XXX.png}
+\caption{Distribution of the the LSE30 requirement verification over the course of the CCRs}
+\label{LSE30_CCRdistribution}
+\end{center}
+\end{figure}
+
+
+\subsection{Objectives}
+The main objective of this Operations Readiness Requirement is to verify the system specifications in the OSS (\citeds{LSE-30}) are proven and well documented. The OSS is essentially the highest-level document describing the basic LSST system technical architecture. It contains sections derived from the OSS on the following broad topics:
 
 \begin{itemize}
 \item System Composition and Constraints
@@ -14,10 +26,27 @@ The main objective of this Operations Readiness Requirement is to verify the sys
 
 	\begin{itemize}
 		\item System Control
+		%new_hd
+		The System Control is implemented by combining a Service Abstraction Layer (SAL) and a number of Commandable SAL Components (CSC).
+		A CSC represents each System and Subsystem in the observatory.
+		Each CSC has a well-defined interface with the SAL. All other CSCs are required to comply with the definition of the interface.
+		Therefore, the interface definitions are handled as requirements and verified as such. 
+		Each interface requirement is verified through unit testing on the teststands at each new release and with the hardware during system usage.  
+		Artifact?
+		
 		\item System Monitoring and Diagnostics
+		As part of the communication between the CSCs, messages with Commands, Events, and Telemetry are exchanged. 
+		These are stored in real-time in the Engineering database and can be displayed through Chronograph, Rubin TV, and others.
+		To verify these efforts, we demonstrate the capabilities during the observatory visit. 
+				
 		\item System Maintenance
+		Maintenance started as soon as the Observatory started to use components that needed maintenance, such as generators.
+		We have implemented a Computerized Maintenance Management System (CMMS) and connected it to our work management system (Jira) 
+		
 		\item System Availability
+		
 		\item System Time References
+		
 	\end{itemize}
 
 \item Detailed Specifications:
@@ -37,10 +66,10 @@ The main objective of this Operations Readiness Requirement is to verify the sys
 
 \subsection{Criteria for Completeness}
 Compliance with this objective will follow the process defined in the Verification and Validation Process document (\citeds{LSE-160}) and associated documentation.  
-All technical specifications in the OSS (\citeds{LSE-30}) and LSR (\citeds{LSE-29}) are expected be met at the end of construction.
+All technical specifications in the OSS (\citeds{LSE-30}) and LSR (\citeds{LSE-29}) are expected to be met at the end of construction.
 
 \subsection{Pre--Operations Interaction}
-None.  Unless there are non-compliance issues with the ORR requirements and specifications.
+None. Unless there are non-compliance issues with the ORR requirements and specifications.
 
 \subsection{Artifacts for Completion}
 
