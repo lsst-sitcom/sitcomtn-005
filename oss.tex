@@ -17,7 +17,7 @@ The distribution between the CCRs is shown in Figure~\ref{CCRs_overview}.
 
 
 \subsection{Objectives}
-The main objective of this Operations Readiness Requirement is to verify the system specifications in the OSS (\citeds{LSE-30}) are proven and well documented. The OSS is essentially the highest-level document describing the basic LSST system technical architecture. It contains sections derived from the OSS on the following broad topics:
+The main objective of this Operations Readiness Requirement is to verify the system specifications in the OSS (\citeds{LSE-30}) are proven and well documented. The OSS is essentially the highest-level document describing the basic LSST system technical architecture. It contains sections derived from the LSR on the following broad topics:
 
 \begin{itemize}
 \item System Composition and Constraints
@@ -35,17 +35,28 @@ The main objective of this Operations Readiness Requirement is to verify the sys
 		Artifact?
 		
 		\item System Monitoring and Diagnostics
+		%new_hd
 		As part of the communication between the CSCs, messages with Commands, Events, and Telemetry are exchanged. 
 		These are stored in real-time in the Engineering database and can be displayed through Chronograph, Rubin TV, and others.
 		To verify these efforts, we demonstrate the capabilities during the observatory visit. 
 				
 		\item System Maintenance
+		%new_hd
 		Maintenance started as soon as the Observatory started to use components that needed maintenance, such as generators.
 		We have implemented a Computerized Maintenance Management System (CMMS) and connected it to our work management system (Jira) 
 		
 		\item System Availability
+		%new_hd
+		The system availability depends on several technical aspects. Principally power and cooling. 
+		We have a staged system with the national grid as a primary power source to ensure power. 
+		As a backup, we have three power levels with decreasing capabilities: two generators and UPS batteries.
+		Cooling consists of redundant Chillers and pumps that can make the best use of the cooling power stored in the system.
+		At CCR1, the power and cooling installations are presented. 
+		%Present ongoing efforts to improve the switch between power source distribution and syncing.
 		
 		\item System Time References
+		%new_hd
+		For the time reference, we have a local time server connected to the internet providing high precision time reference at any given moment.  		
 		
 	\end{itemize}
 
@@ -53,15 +64,32 @@ The main objective of this Operations Readiness Requirement is to verify the sys
 
 	\begin{itemize}
 		\item Science and Bulk Data
-		\item Optical System
+		
+		\item Optical System 
+		%new_hd
+		The optical system consists of the three mirror surfaces, the camera lenses, and the detectors. Each element has been tested indiv
+		idually. At CCR1, we present an overview of the artifacts collected during the fabrication and coating processes.
+		
 		\item System Throughput
+		
+		This is addressed in the SRD section.
+		
 		\item Camera System
+		The LSSTCam is still in verification during the time of the CCR1
+		We will present the actual state of the testing, integration, and commissioning activities and a plan to finalize the commissioning.
+		
 		\item Photometric Calibration
+		The calibration system is still being verified during the time of the CCR1.
+		We will present the actual state of the testing, integration, and commissioning activities and a plan to finalize the commissioning.
+		
 		\item System Timing and Dynamics
+		We present the status of the TMA testing and integration with the attached subsystems.
+		
 	\end{itemize}
 	
 \item Education and Public Outreach
-
+	EPO has already entered operations. During CCR1, we briefly present their status.
+	
 \end{itemize}
 
 \subsection{Criteria for Completeness}
