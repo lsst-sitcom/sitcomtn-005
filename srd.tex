@@ -82,14 +82,16 @@ Each LSR requirement has been decomposed into individual verification tickets. E
 
 \begin{itemize}
 	\item CCR1: system-level functional capabilities to support on-sky commissioning; no system-level science performance requirements from the LSR are associated with CCR1
-	\item CCR2: aspects of system-level science performance related to the intrinsic information content of the single-visit images (e.g., optical system throughout, image quality (PSF FWHM, ellipticity), ghosts/scattered light, sensor anomalies)
-	\item CCR3: aspects of system-level science performance that characterize an ensemble of visit images and/or which relate to capability to calibrate visit images (e.g., PSF modeling, astrometric repeatability, photometric repeatability)
-	\item CCR4: aspects of system-level science performance related to the survey performance and associated data products (e.g., )
+	\item CCR2: aspects of system-level science performance related to the intrinsic information content of the single-visit images, e.g., optical system throughout, image quality (PSF FWHM, ellipticity), ghosts/scattered light, sensor anomalies
+	\item CCR3: aspects of system-level science performance that characterize an ensemble of visit images and/or which relate to capability to calibrate visit images, e.g., PSF modeling, astrometric repeatability, photometric repeatability
+	\item CCR4: aspects of system-level science performance related to the survey performance and associated data products, e.g., photometric uniformity, PSF ellipticity residuals at full survey depth
+	\item Beyond CCR4: aspects of system-level science performance that require one or more years of survey operations to verify, e.g., cadence of annual LSST Data Releases
 \end{itemize}
 
 This verification phasing is designed to establish confidence that the as-built Rubin Observatory is capable of routinely acquiring acceptable science-grade imaging across the LSSTCam full focal plane (i.e., attainment of the System First Light technical milestone \citeds{SITCOMTN-061}) early in the on-sky commissioning period.
 Science Validation surveys at the conclusion of the commissioning period (Section~\ref{sec:svs}) are designed to collect a volume data $\gtrsim 1\%$ of the 10-year LSST to enable survey-scale validation and characterization studies.
 Allowing for time needed to process and scientifically analyze data from the Science Validation surveys, it is anticipated that Operations will commence prior to the final verification of all system-level science performance requirements to be reported at CCR4.
+Most CCR4 requirements are expected to be verified during the course of on-sky commissioning, including final analysis of the Science Validation Surveys, and early operations.
 %The capabilities of the Data Management system (Section~\ref{sec:dm}) and science data quality monitoring (Section~\ref{sec:sdqa}) can be verified for operational readiness using .
 
 For system-level science performance verification, the majority of test cases described under the LSST Verification and Validation project will be implemented using metrics and/or data visualizations that are generated as part of Science Pipelines execution, as separate test procedures (e.g., Jupyter notebooks on the Rubin Science Platform), or via inspection/demonstration (e.g., to show that a service or data produce has been delivered).
@@ -123,6 +125,8 @@ In addition, more than 100 individuals in the Rubin science community are making
 The characterization and documentation of science performance at the conclusion of the Construction project will be considered successfully complete when all requirements in the LSR have been verified.
 %This criterion is met when sufficient science verification, validation, and characterization studies have been completed to establish confidence that the 10-year LSST survey can satisfy LSR and SRD requirements.
 At a minimum, LSR requirements associated with CCR1, CCR2, and CCR3 must be verified at the end of Construction following the process defined in the Verification and Validation Process document (\citeds{LSE-160}) and associated documentation.
+For those that are not, a waiver will be sought to enter Operations and they will be completed within the first year of Operations.
+
 
 %The Project team shall complete sufficient science verification, validation, and characterization studies to be confident that the 10-year LSST survey can satisfy OSS, LSR, and SRD requirements. Some aspects of science performance are fixed by the telescope, camera, and observing strategy, while others can be continually improved through refinements of the Science Pipelines. In this context, key objectives of science verification are to distinguish between anomalies that can be addressed in the science pipelines and those that are more fundamental to the raw data, and to establish confidence that more subtle anomalies do not fundamentally limit science reach during Early Operations.
 
