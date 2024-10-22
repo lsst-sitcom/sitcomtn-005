@@ -1,107 +1,197 @@
 \section{Science Validation Survey}  \label{sec:svs}
 
-\subsection{Operations Readiness Requirement:}
+\subsection{Operations Readiness Requirement}
 
-The project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days;
+The Project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days;
 
-\subsection{Objectives:}
+\subsection{Objectives}
 
-The main objective with this Operations Readiness Requirement is to effectively conduct a ``full dress rehearsal" of science operations.  The 30-day time span is intended to include operations affected by a full lunar cycle including:
+The main objective of this criterion is to demonstrate the reliability of the as-built Rubin Observatory, meaning that hardware, software, and infrastructure functionality do not limit Observatory operations until the next programmed maintenance event.
+To demonstrate reliability, one or more Science Validation Surveys will be conducted at the conclusion of the on-sky commissioning as a full rehearsal of science operations. The minimum 30-day time span for verification corresponds to $\sim 1\%$ of the 10-year LSST, and is intended to incorporate operations procedures over a full lunar cycle including:
 
 \begin{itemize}
-\item Filter swapping the u-band during dark time;
-\item Management of survey scheduling during the period around full moon;
-\item Scheduler response to a range of environment conditions encountered at the observatory over a 30-day period, including periods of cloud cover and variable atmospheric seeing, variable winds, and changes in daytime / nighttime temperature;
-\item Response of the LSST Data Facility to sustained data rates including simultaneous execution of the Alert Production and Data Release Production pipelines.
+\item Filter swapping between bright and dark time;
+%\item Management of survey scheduling during the period around full moon;
+\item Active optics system, dome, and Scheduler response to a range of environment conditions encountered at the observatory over a 30-day period, including periods of cloud cover and variable atmospheric seeing, variable winds, and changes in daytime / nighttime temperature;
+\item Response of the Data Management system to sustained data rates including simultaneous execution of the Alert Production and Data Release Production pipelines.
 \end{itemize}
 
 In addition, the following concepts of operations and their procedures will be rehearsed and demonstrated:
 
 \begin{itemize}
 \item Full rehearsal of safety procedures for science operations;
-\item Routine daytime maintenance of the observatory;
+\item Scheduling shifts for daytime and nighttime operations;
+\item Communication protocols for observation planning, daytime and nighttime operations and decision-making, and requesting support;
+\item Routine daytime maintenance of the Observatory;
 \item Collection and processing of routine calibration data and data products consistent with the time allotted in the 24-hour operations cycle;
 \item Routine nighttime survey observing operations driven by the scheduler with minimal human interaction, including response to realtime telemetry, AuxTel;
+\item Recovery from interruptions to observing (e.g., failure of the network)
 \item Demonstration of near real time data quality assessment;
 \item Prompt processing of alerts within the required latency time (i.e., 60 seconds);
-\item Recovery from interruptions to observing (e.g. failure of the network)
-\item Distribution of prompt products;
-\item Prompt processing and the ``24-hour" data products (e.g., asteroid orbit calculations);
-\item Data Release Production (at least once) and publication to the LSST Science Platform.
+\item Distribution of Prompt products;
+\item Prompt processing ``24-hour" data products (e.g., Solar System Object orbit calculations);
+\item Cumulative Data Release Production with the full set of deep coadd and time-domain data products (at least once);
+\item Access to on-sky data products via the Rubin Science Platform.
 \end{itemize}
 
-Data acquired during the Science Validation Survey(s) should be science quality to allow a summative assessment of the delivered scientific performance of the as-built system.
+Data acquired during the Science Validation Survey(s) should routinely deliver acceptable science quality imaging to allow a summative assessment of the delivered scientific performance of the as-built system.
+The Operations team plans to serve data products from the Science Validation Survey(s) as part of the Early Science Program \citeds{RTN-011}.
 
-\textbf{Discussion}
+%\subsubsection{Baseline Sciece Validation Survey Design}
 
-The baseline schedule of on-sky observations during commissioning concludes with a 8-week period to undertake two Science Validation Surveys. The two surveys are designed to test the Prompt Products and Data Release Products, respectively. These surveys would begin after the early system integration and test period for LSSTCam, and assume that stable science quality imaging capability has been established prior to beginning sustained observing campaigns.
+\textbf{Baseline Sciece Validation Survey Design}
 
-    Wide-area Science Validation Survey: In a first phase, observe a region of roughly 1000~deg$^2$ to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey in multiple filters (2 weeks). Create image templates with the Data Release Production pipeline to be used as input for difference imaging. In a second phase starting roughly 4 weeks after the completion of the first phase, observe the same region to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey, running the Alert Production pipeline at full scale (2 weeks). The 4-week separation between phases is used for template generation and to allow evolution of variable and transient astrophysical sources between template and test images.
-    10-year Depth Science Validation Survey: Observe a region larger than 100~deg$^2$ to an integrated exposure equivalent to the 10-year Wide-Fast-Deep survey in multiple filters (4 weeks). Process the data with the Data Release Production pipeline.
+The baseline schedule of on-sky commissioning activities concludes with an 8-week period to undertake two Science Validation Surveys.
+The two surveys are optimized to test science performance at full LSST depth and alerts at LSST survey data rates, respectively: a Deep component covering $\sim100$ deg$^2$ in $ugrizy$ to at least 10-yr LSST WFD equivalent exposure, and a Wide component covering at least $\sim1000$ deg$^2$ in $griz$ to 1-yr LSST WFD equivalent exposure.
+The survey components are designed to be scalable, depending on needs to verify and validate operational procedures described above.
 
-Observation Timeline (baseline):
-2 weeks	Wide-area Science Validation Survey: Template Generation Phase
-4 weeks	10-year Depth Science Validation Survey
-2 weeks	Wide-area Science Validation Survey: Realtime Alert Production Phase
+Based on initial Scheduler simulations, observations for the two survey components are planned to be interleaved as part of a single Scheduler configuration.
+Data from both survey components will be processed with Prompt Production and Data Release Production pipelines.
+%The two surveys are designed to test the Prompt Products and Data Release Products, respectively.
+These surveys would begin after the early system integration and test period for LSSTCam, and assume that stable science quality imaging capability has been established prior to beginning sustained observing campaigns.
+% (i.e., System First Light technical milestone \citeds{SITCOMTN-061})
+Additional details regarding the baseline Science Validation survey design below.
 
-The Wide-area Science Validation survey is designed to approximate the difference imaging templates and data rates that would be expected during early science operations, thus also providing a full-scale test of the LSST Data Facility. The scheduler will drive nighttime observatory operation during the Science Validation surveys.
-
-In the event of a compressed period for on-sky observations, we have a draft minimum observing strategy:
+\textit{Deep Survey}
 
 \begin{itemize}
-\item Single-visit KPMs:
-        6 Star flats in $ugrizy$ \times 4 epochs = 4 nights
-\item Nominal observing for scheduler testing = 3 nights (Note: some scheduler testing will be done during ComCam and LSSTCam integration periods)
-\item Challenging regions (e.g., dense stellar fields) = 1 night
-\item Full-Depth Survey: 
-        20 year depth in $ugrizy$ overlapping at least 1 external reference field, allowing dithers (factor ~3) -> $\sim$5K visits = 8 nights
-\item Wide-Area Survey:
-        1600 deg$^2$ in $gi$ filters to 1-year equivalent depth, repeated in two phases -> 12K visits = 20 nights
+
+        \item During first 30 days of Science Validation survey period
+
+        \begin{itemize}
+
+                \item 11 pointings $\times$ 825 visits per pointing = 9075 visits ($\sim$15 night equivalents)
+                \item 825 visits / pointing $(u, g, r, i, z, y)$ = (56, 80, 184, 184, 160, 160)
+                \item 100 deg$^2$ in single contiguous region overlapping an LSST DDF; nominal LSST WFD dither pattern (might need intra-night translational offsets and rotator angles to simulate expected LSST distribution)
+                \item Steadily build integrated exposure during the survey
+                \item During a 30 day period, each pointing would receive average of 25 visits on each night
+                %\item Representative DRP data products: Source, Object, ForcedSource, DiaSource, DiaObject, DiaForcedSource
+                %\item Representaitive AP mode: DiaObject, DiaSource, DIAForcedSource
+
+        \end{itemize}
+
+        \item During Next 30 days of Science Validation survey period: increase to 20-year LSST WFD exposure, 1650 visits / pointing, $(u, g, r, i, z, y)$ = (112, 160, 368, 368, 320, 320)
+
 \end{itemize}
 
-The example compressed on-sky observing program above is $\sim36$ nights total.
-
-The essential elements of any observing strategy for the Science Validation surveys are (1) the need to reach at least 10-year WFD equivalent depth in all 6 bands in at least one field, (2) to reach 1-year WFD equivalent depth in at least 2 bands over an area exceeding 100~deg$^2$, (3) to exercise the nominal scheduler for LSST operations continuously for at least 2 nights, and (4) to have coverage to at least 1-year WFD equivalent depth in all 6 bands in fields spanning a range of stellar density. These minimum requirements would allow verification of the highest priority system-level science performance metrics, with more limited opportunities for science validation and characterization.
-The baseline and compressed observing programs described above illustrate how these minimal datasets for system verification could be acquired within a window of at least 30 nights.
-
-\subsection{Criteria for Completeness Description:}
-
-A 30-day Science Validation survey period of sustained on-sky observations, routinely delivering science-quality images, is considered the minimum to cover the range expected environmental conditions, provide sufficient opportunities for science verification, and demonstrate operational procedures.
-The observatory should operate continuously in scheduler-driven mode for at least 10 days to demonstrate stable operation.
-The baseline plan with at least two months of Science Validation Surveys would offer further opportunities for science validation and optimization of survey operations, likely enhancing the delivered data quality and observatory efficiency during Early Operations, as well as informing science pipeline development and refinements leading up to the production of LSST DR1.
-
-\subsection{Pre-Operations Interactions:}
-
-At the conclusion of the Science Validation Survey(s), roughly two years will have elapsed since the start of Early System Integration and Testing, which places the LSST Observatory on schedule for its 2-year major maintenance and servicing.
-
-M1M3 Mirror Recoating: Remove, strip, clean, and re-coat the M1M3 mirror surfaces. Reinstall M1M3 mirror back into telescope. Associated activities include:
+\textit{Wide Survey}
 
 \begin{itemize}
-\item Remove Top-End Integrating Structure with Camera and transfer to Summit Facility camera lab.
-\item Install camera dummy mass to allow the telescope to point to zenith for removal of the M1M3 mirror cell. Remove M1M3 mirror assembly and transfer to Summit Facility re-coating plant.
-\item Strip old coating, clean and re-coat mirror surfaces.
-\item Re-install M1M3 in telescope and prepare to receive the top-end integrating structure with the camera.
+
+        \item During first 30 days of Science Validation survey period
+
+        \begin{itemize}
+
+                \item 110 pointings $\times$ 80 visits per pointing = 9000 visits ($\sim15$ night equivalents)
+                \item 80 visits per pointing $(g, r, i, z)$ = (20, 20, 20, 20)
+                \item 1050 deg$^2$  in single contiguous region placed to optimize scheduling flexibility, considering the SV survey Deep region; span range of stellar density; cross ecliptic
+                \item Steadily build integrated exposure during the survey; consider prioritizing template coverage early
+                \item Solar System cadence
+                \item During a 30 day period, each pointing would receive average of $\sim2.6$ visits on each night
+                %\item Representative DRP data products: Source, Object, ForcedSource, DiaSource, DiaObject, DiaForcedSource
+                %\item Representaitive AP mode: DiaObject, DiaSource, DIAForcedSource
+
+        \end{itemize}
+
+        \item During next 30 days of Science Validation survey period: increase area coverage attempting to maintain depth uniformity
+
 \end{itemize}
 
-Camera Maintenance and Servicing: Clean, service, perform maintenance, and replace shutter. Associated activities include:
+%    Wide-area Science Validation Survey: In a first phase, observe a region of roughly 1000~deg$^2$ to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey in multiple filters (2 weeks). Create image templates with the Data Release Production pipeline to be used as input for difference imaging. In a second phase starting roughly 4 weeks after the completion of the first phase, observe the same region to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey, running the Alert Production pipeline at full scale (2 weeks). The 4-week separation between phases is used for template generation and to allow evolution of variable and transient astrophysical sources between template and test images.
+%    10-year Depth Science Validation Survey: Observe a region larger than 100~deg$^2$ to an integrated exposure equivalent to the 10-year Wide-Fast-Deep survey in multiple filters (4 weeks). Process the data with the Data Release Production pipeline.
+
+%Observation Timeline (baseline):
+%2 weeks	Wide-area Science Validation Survey: Template Generation Phase
+%4 weeks	10-year Depth Science Validation Survey
+%2 weeks	Wide-area Science Validation Survey: Realtime Alert Production Phase
+
+The Wide Science Validation Survey is designed to approximate the difference imaging templates and data rates that would be expected during the first year of LSST, thus also providing a sustained full-scale test of the Data Facility.
+%early science operations,
+The Scheduler will drive nighttime observatory operation during the Science Validation Surveys.
+
+The defition of Science Validation Surveys is understood to be sufficiently broad to include all types of scheduler-driven observations that are suitable for performance evaluation of in-focus science images and Science Pipelines commissioning.
+
+%In the event of a compressed period for on-sky observations, we have a draft minimum observing strategy:
+
+%\begin{itemize}
+%\item Single-visit KPMs:
+%        6 Star flats in $ugrizy$ \times 4 epochs = 4 nights
+%\item Nominal observing for scheduler testing = 3 nights (Note: some scheduler testing will be done during ComCam and LSSTCam integration periods)
+%\item Challenging regions (e.g., dense stellar fields) = 1 night
+%\item Full-Depth Survey:
+%        20 year depth in $ugrizy$ overlapping at least 1 external reference field, allowing dithers (factor ~3) -> $\sim$5K visits = 8 nights
+%\item Wide-Area Survey:
+%        1600 deg$^2$ in $gi$ filters to 1-year equivalent depth, repeated in two phases -> 12K visits = 20 nights
+%\end{itemize}
+
+%The example compressed on-sky observing program above is $\sim36$ nights total.
+
+%The essential elements of any observing strategy for the Science Validation surveys are (1) the need to reach at least 10-year WFD equivalent depth in all 6 bands in at least one field, (2) to reach 1-year WFD equivalent depth in at least 2 bands over an area exceeding 100~deg$^2$, (3) to exercise the nominal scheduler for LSST operations continuously for at least 2 nights, and (4) to have coverage to at least 1-year WFD equivalent depth in all 6 bands in fields spanning a range of stellar density. These minimum requirements would allow verification of the highest priority system-level science performance metrics, with more limited opportunities for science validation and characterization.
+%The baseline and compressed observing programs described above illustrate how these minimal datasets for system verification could be acquired within a window of at least 30 nights.
+
+\subsection{Criteria for Completeness Description}
+
+The Science Validation Surveys construction completeness criteria are considered to be met upon verification by analysis of the System Availability requirements described in the OSS.
+The baseline is to conduct one or more scheduler-driven Science Validation surveys as the primary activity at the conclusion of the commissioning period, with the objective to verify system reliability over a minimum 30-day window coinciding with the Science Validation survey. This 30-day window is anticipated to begin around the System First Light milestone, although it could start somewhat before or after.
+Verification of System Availability requirements includes
 
 \begin{itemize}
-\item Replace camera shutter with fresh operational unit;
-\item Inspect, service, or repair filter mechanisms;
-\item Clean internal camera optics;
-\item Inspect, service, and repair utility trunk electronics
+        \item analysis of the operational uptime accounting for weather losses as well as scheduled and unscheduled system downtime and
+        \item tests of the observing efficiency in terms of the rate of visits within scheduled observing time, including time intervals between visits for a nominal survey strategy (exposure time, slew time, readout time, filter exchange time) under the normal operating conditions defined in the OSS.
 \end{itemize}
 
-\subsection{Artifacts for ORR:}
+During the verification window, the commissioning team might choose to include some engineering activities to further optimize system performance. Planned engineering activities do not ``count against'' evaluation of the system reliability, so long as unplanned faults, etc., do not limit our ability to predictably operate the observatory.
+
+A 30-day period of sustained on-sky observations, routinely delivering acceptable science-quality images, is considered the minimum to cover the range expected environmental conditions, provide sufficient opportunities for science verification, and demonstrate operational procedures.
+
+The Operations team might decide to conduct more extended Science Validation Survey and/or further system optimization work during first months of operations – ``Scenario B'' described in Early Science Program \citeds{RTN-011}.
+
+%The observatory should operate continuously in scheduler-driven mode for at least 10 days to demonstrate stable operation.
+%The baseline plan with at least two months of Science Validation Surveys with would offer further opportunities for science validation and optimization of survey operations, likely enhancing the delivered data quality and observatory efficiency during Early Operations, as well as informing science pipeline development and refinements leading up to the production of LSST DR1.
+
+\subsection{Pre-Operations Interactions}
+
+In the current baseline schedule, the Science Validation surveys are the final activity prior to the acceptance of the Observatory by the Operations team.
+The progress of the Science Validation surveys will be routinely monitored and communicated to the Operations team in the period leading up to the handover.
+%Scheduler configurations and night plans for the on-sky observing campaigns will be made available to the Operations team.
+%The Operations team has considered scenarios that would continue the Science Validation surveys, or otherwise augment observing campaigns from the on-sky commissioning,
+%in order to further test operational procedures and
+
+The Science Validation Surveys represent an important opportunity to transfer knowledge of operational procedures to the Operations team.
+In practice, a substantial fraction of Operations team personnel hold similar roles in the Construction project.
+It is therefore anticipated that many Operations team members will be directly involved in running the Science Validation Surveys.
+%, and rehearsing all major aspects of the 24-hour operations cycle in close coordination with the commissioning effort.
+
+%At the conclusion of the Science Validation Survey(s), roughly two years will have elapsed since the start of Early System Integration and Testing, which places the LSST Observatory on schedule for its 2-year major maintenance and servicing.
+
+%M1M3 Mirror Recoating: Remove, strip, clean, and re-coat the M1M3 mirror surfaces. Reinstall M1M3 mirror back into telescope. Associated activities include:
+
+%\begin{itemize}
+%\item Remove Top-End Integrating Structure with Camera and transfer to Summit Facility camera lab.
+%\item Install camera dummy mass to allow the telescope to point to zenith for removal of the M1M3 mirror cell. Remove M1M3 mirror assembly and transfer to Summit Facility re-coating plant.
+%\item Strip old coating, clean and re-coat mirror surfaces.
+%\item Re-install M1M3 in telescope and prepare to receive the top-end integrating structure with the camera.
+%\end{itemize}
+
+%Camera Maintenance and Servicing: Clean, service, perform maintenance, and replace shutter. Associated activities include:
+
+%\begin{itemize}
+%\item Replace camera shutter with fresh operational unit;
+%\item Inspect, service, or repair filter mechanisms;
+%\item Clean internal camera optics;
+%\item Inspect, service, and repair utility trunk electronics
+%\end{itemize}
+
+\subsection{Artifacts for ORR}
 
 \begin{itemize}
 \item Safety report from continuous observatory operations during the survey(s)
 \item Summary of daytime and nighttime activity for each 24 hour period of the survey(s)
 \item Metrics for the effective survey speed, including number of visits per night, telescope slew angles and slew times, filter changes, etc., which can be used to inform survey strategy during early operations
-\item Characterization of the distribution of data quality delivered by the as-built system, for example, distributions of single-visit image quality and image depth.
+\item Characterization of the distribution of data quality delivered by the as-built system, for example, distributions of single-visit image quality and image depth
 \item Realtime alert stream
-\item Associated data release production products accessed via the Rubin Science Platform (RSP)
-\item Pre-ORR observatory maintenance report summarizing the pre-operations engineering activities and current status of the observatory
+\item Associated Data Release Production products accessed via the Rubin Science Platform (RSP)
+\item Observatory maintenance report summarizing the pre-operations engineering activities and status of the observatory
 \item Documentation for observatory operations, including recommendations for optimization of data quality and survey efficiency
-\item Documentation for LSST Data Facility (LDF) operations
+\item Documentation for Data Facility operations
 \end{itemize}
