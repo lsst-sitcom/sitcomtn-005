@@ -16,7 +16,7 @@ To demonstrate reliability, one or more Science Validation Surveys will be condu
 \item Response of the Data Management system to sustained data rates including simultaneous execution of the Alert Production and Data Release Production pipelines.
 \end{itemize}
 
-In addition, the following concepts of operations and their procedures will be rehearsed and demonstrated:
+In addition, as a baseline, the following concepts of operations and their procedures will be rehearsed and demonstrated:
 
 \begin{itemize}
 \item Full rehearsal of safety procedures for science operations;
@@ -28,7 +28,7 @@ In addition, the following concepts of operations and their procedures will be r
 \item Recovery from interruptions to observing (e.g., failure of the network)
 \item Demonstration of near real time data quality assessment;
 \item Prompt processing of alerts within the required latency time (i.e., 60 seconds);
-\item Distribution of Prompt products;
+\item Capability for distribution of Prompt products;
 \item Prompt processing ``24-hour" data products (e.g., Solar System Object orbit calculations);
 \item Cumulative Data Release Production with the full set of deep coadd and time-domain data products (at least once);
 \item Access to on-sky data products via the Rubin Science Platform.
@@ -39,7 +39,7 @@ The Operations team plans to serve data products from the Science Validation Sur
 
 %\subsubsection{Baseline Sciece Validation Survey Design}
 
-\textbf{Baseline Sciece Validation Survey Design}
+\textbf{Baseline Science Validation Survey Design}
 
 The baseline schedule of on-sky commissioning activities concludes with an 8-week period to undertake two Science Validation Surveys.
 The two surveys are optimized to test science performance at full LSST depth and alerts at LSST survey data rates, respectively: a Deep component covering $\sim100$ deg$^2$ in $ugrizy$ to at least 10-yr LSST WFD equivalent exposure, and a Wide component covering at least $\sim1000$ deg$^2$ in $griz$ to 1-yr LSST WFD equivalent exposure.
@@ -105,6 +105,7 @@ Additional details regarding the baseline Science Validation survey design below
 %4 weeks	10-year Depth Science Validation Survey
 %2 weeks	Wide-area Science Validation Survey: Realtime Alert Production Phase
 
+The Deep Science Validation Survey is designed to testing coadds at the equivalent LSST 10-year survey full depth and beyond.
 The Wide Science Validation Survey is designed to approximate the difference imaging templates and data rates that would be expected during the first year of LSST, thus also providing a sustained full-scale test of the Data Facility.
 %early science operations,
 The Scheduler will drive nighttime observatory operation during the Science Validation Surveys.
@@ -144,7 +145,9 @@ During the verification window, the commissioning team might choose to include s
 
 A 30-day period of sustained on-sky observations, routinely delivering acceptable science-quality images, is considered the minimum to cover the range expected environmental conditions, provide sufficient opportunities for science verification, and demonstrate operational procedures.
 
-The Operations team might decide to conduct more extended Science Validation Survey and/or further system optimization work during first months of operations – ``Scenario B'' described in Early Science Program \citeds{RTN-011}.
+Consistent Data Release Processing of the full dataset acquired during the Science Validation surveys, along with verification of the scientific performance at survey scale with the resultant data products, could continue in the period between the handover to Operations and CCR4 (Section \ref{sec:srd}), provided that the functionality to process and characterize on-sky observations has been demonstrated on smaller scales (Sections \ref{sec:dm} and \ref{sec:sdqa}).
+
+The Operations team might decide to conduct more extended Science Validation Survey and/or further system optimization work during first months of operations - ``Scenario B'' described in Early Science Program \citeds{RTN-011}.
 
 %The observatory should operate continuously in scheduler-driven mode for at least 10 days to demonstrate stable operation.
 %The baseline plan with at least two months of Science Validation Surveys with would offer further opportunities for science validation and optimization of survey operations, likely enhancing the delivered data quality and observatory efficiency during Early Operations, as well as informing science pipeline development and refinements leading up to the production of LSST DR1.
@@ -182,7 +185,7 @@ It is therefore anticipated that many Operations team members will be directly i
 %\item Inspect, service, and repair utility trunk electronics
 %\end{itemize}
 
-\subsection{Artifacts for ORR}
+\subsection{Artifacts for Completion}
 
 \begin{itemize}
 \item Safety report from continuous observatory operations during the survey(s)

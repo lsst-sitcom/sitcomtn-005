@@ -4,25 +4,25 @@
 
 The Rubin Project Team shall demonstrate that relevant technical data about the system state and surrounding conditions during which the survey data are being collected are recorded and archived.
 
-\subsection{Objectives:}
+\subsection{Objectives}
 
-The objective of this requirement is to ensure that the technical state of the hardware/software systems and the surrounding environment are recorded during the time of survey data collection with sufficient fidelity to be used in support of subsequent processing to produce the LSST science products. This is of particular importance for the determination and correction of systematics in the science data as the survey progresses and statistics improve.  Additionally, this includes the technical data record required to ensure efficient operation and maintenance of the observing facility.   The primary repository of this technical data is the Engineering Facility Database (EFD) - it has two components: 
-1) a searchable database that captures the time-dependent "housekeeping" data and 
-2) the Large File Annex for non-telemetry records (e.g., configuration files, images, other binary files outside the science pixel data etc...).
+The objective of this requirement is to ensure that the technical state of the hardware/software systems and the surrounding environment are recorded during the time of survey data collection with sufficient fidelity to be used in support of subsequent processing to produce the LSST science products. This is of particular importance for the determination and correction of systematics in the science data as the survey progresses and statistics improve.  Additionally, this includes the technical data record required to ensure efficient operation and maintenance of the observing facility.   The primary repository of this technical data is the Engineering Facility Database (EFD) - it has two components:
+1) a searchable database that captures the time-dependent ``housekeeping'' data and
+2) the Large File Annex for non-telemetry records (e.g., configuration files, images, other binary files outside the science pixel data etc.).
 
 Technical data at the time of each observation ({\it e.g.} visit) includes but is not limited to:
 
 \begin{itemize}
 	\item Technical "housekeeping" data, which includes telemetry, events and commands from each subsystem component as published to the EFD;
-	
-	\item Software version including the history of the 
+
+	\item Software version including the history of the
 	%new_hd
 	\begin{enumerate}
-		\item low-level, hardware-related software, 
-		\item the Engineering User Interfaces, and 
-		\item Comandable SAL Components 
+		\item low-level, hardware-related software,
+		\item the Engineering User Interfaces, and
+		\item Comandable SAL Components
 	\end{enumerate}
-	Software written by or modified at the Observatory is documented, reviewed and version-controlled on GitHub. 
+	Software written by or modified at the Observatory is documented, reviewed and version-controlled on GitHub.
 	\item The configurations of all subsystems, including their history
 	%new_hd
 	Configurations are handled through the following workflows:
@@ -34,20 +34,20 @@ Technical data at the time of each observation ({\it e.g.} visit) includes but i
 	\item Meteorological and the environmental state on the Summit
 	%new_hd
 	The observatory has a weather station and uses satellite images from Meteoblue to monitor and predict the meteorological conditions at and around the Observatory.
-	
+
 	\item Environmental conditions in the dome interior
 	%new_hd
 	The Environmental awareness system foresees a large number of sensors to monitor the environmental conditions in the dome.
-	
+
 	\item State of atmospheric turbulences -- {\it e.g.} seeing; and
 	%new_hd
 	A dedicated DIMM is part of the observatory.
-	
+
 	\item State of sky transparency.
 	%new_hd
-	A dedicated all-sky camera and the DREAM camera are part of the observatory monitoring cloud coverage. 
+	A dedicated all-sky camera and the DREAM camera are part of the observatory monitoring cloud coverage.
 	The AuxTel is equipped with a spectrograph to make detailed characterization of the sky at the same time and direction as the Simonyi telescope is observing.
-	
+
 \end{itemize}
 
 \subsection{Criteria for Completeness}
@@ -66,9 +66,9 @@ Satisfying these criteria includes, at a minimum:
 
 \sout{Transfer and archive the EFD from the Base Facility to the US Data Center. The US Data Center is located at SLAC for the purpose of construction completeness evaluation. The US Data Center is required for external queries from users outside the immediate Rubin Observatory Project.}
 
-\subsection{Artifacts for the CCRs}
+\subsection{Artifacts for Completion}
 \begin{itemize}
 	\item A report documenting minimum criteria as defined in the criteria section above;
 	\item \sout{An SDK and example code for custom dashboards and dashboard templates available through a software repository(s) - {\it e.g.} GitHub or similar} This is now done in Chronograf and does not need code to be written; and
-	\item Example code for Rubin Science Platform queries to the EFD available through a software repository - {\it e.g.} GitHub or similar.	
+	\item Example code for Rubin Science Platform queries to the EFD available through a software repository - {\it e.g.} GitHub or similar.
 \end{itemize}
