@@ -56,41 +56,48 @@ These tools include:
 
 \begin{itemize}
 
-	\item LOVE - LSST Observing Visualization Environment used to have standardized dashboards and visualization of the system state;
+	\item LOVE - LSST Observing Visualization Environment includes dashboards and other visualizations of the system state;
 	\item RubinTV -- front-end for data quality visualization to support nighttime operations
-	\item Engineering Facility Database -- accessible through science platform and pre-defined dashboards;
-	\item Consolidated Database -- provides capability to rendezvous system telemetry and science performance metrics;
-	\item SQuaSH -- the Science Quality System Harness (\citeds{sqr-009});
-	\item Chronograph -- dashboards for time series data visualization;
+	\item Engineering Facility Database -- engineering data accessible through Rubin Science Platform and pre-defined dashboards;
+	\item Consolidated Database -- relational database that holds items such as the exposure log and provids capability to rendezvous system telemetry and science performance metrics;
+	%\item SQuaSH -- the Science Quality System Harness (\citeds{sqr-009});
+	\item Sasquatch -- service for metrics and telemetry data; collecting, storing, and querying time-series data
+	\item Chronograph -- web-based graphical front-end with dashboards for time series data visualization;
+	\item Camera Image Viewer -- pixel-level camera image viewing tool with interactive features;
+	\item \item analysis\_tools -- Science Pipelines package for computing science performance metrics and diagnostic plots as part of image reduction pipeline execution
+	\item Plot Navigator -- web-based tool for browsing diagnostic plots of science performance;
+	\item \item Times Square -- service for displaying parameterized Jupyter Notebooks as websites;
 	\item Rubin Science Platform (RSP) -- used for investigative ad--hoc analysis (\citeds{LSE-319}); the RSP is accessible via the web and includes a Jupyter notebook aspect and other interactive tools for data visualization.
 
 \end{itemize}
 
 \subsection{Criteria for Completeness Description}
 
-The SDQA shall monitor and record the properties of the system error budget tree, including image quality and throughput, and define pass or fail status at each of the primary entries entries.   These include the following terms of the image quality:
+The SDQA capabilities will be considered to be successfully complete upon verification of the System Monitoring and Diagnostics and Image Visualization requirements described in the OSS, including demonstration of this toolset using on-sky observations with LSSTCam.
 
-\begin{itemize}
+%At a minimum, SDQA tooling must monitor and record the following terms of the image quality:
 
-	\item PSF FWHM;
-	\item PSF shape ellipticity as described by second moments;
-	\item System wavefront measurements for each visit; and
-	\item Throughput measurements over the entire field of view.
+%\begin{itemize}
 
-\end{itemize}
+%	\item PSF FWHM;
+%	\item PSF shape ellipticity as described by second moments;
+%	\item System wavefront measurements for each visit; and
+%	\item Throughput measurements over the entire field of view.
 
-Tooling for evaluating SDQA shall demonstrate the ability to display performance on a visit by visit basis as well as being able to show the history of performance metric over a user defined span of time.
+%\end{itemize}
+
+%Tooling for SDQA shall demonstrate the ability to display performance on a visit-by-visit basis as well as being able to show the history of performance metric over a user defined span of time.
 
 \subsection{Pre-Operations Interactions}
 The pre-operation interaction include training the observing specialists to recognize and respond to warning and errors from subsystems during nighttime operations as well as data quality anomalies.
 
-\subsection{Artifacts for ORR}
+\subsection{Artifacts for Completion}
 
 \begin{itemize}
 
 	\item Demonstrated functional tool kit as described above;
-	\item Code validation tool kit to quantify software performance;
-	\item Derived reporting from the Science Verification/Validation survey(s)
+	\item Derived reports from the Science Verification/Validation survey(s);
+	\item SDQA tooling documentation and code repositories
 
 \end{itemize}
 
