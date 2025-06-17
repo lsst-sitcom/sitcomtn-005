@@ -65,20 +65,61 @@ As of early June 2025, the forecast of on-sky commissioning activities includes 
         \item and validate the FBS performance and the observing strategy for the SV surveys.
 \end{itemize}
 
-The enhanced baseline SV survey design includes three survey components that are interleaved as part of a single FBS configuration:
+The enhanced baseline SV survey design includes two main survey components that are interleaved as part of a single FBS configuration:
 \begin{itemize}
         \item a \textbf{Deep Survey} that is optimized for testing deep coadds at the equivalent integrated exposure of the LSST 10-year survey and beyond, achieving a rapid temporal sampling in those fields, and validating the observing strategy for the LSST Deep Drilling Fields (DDFs);
         \item a \textbf{Wide Survey} that is optimized for testing template generation and Prompt Processing with difference image analysis at data rates that would be expected during the first year of LSST, thereby providing a sustained full-scale test of the Data Facility;
-        \item a \textbf{Template Generation Survey} that is optimized for building wide-area template coverage, including to support target-of-opportunity science cases during the first year of LSST.
 \end{itemize}
 The enhanced baseline SV survey adopts many of the design elements of the standard LSST cadence, with modifications to increase the likelihood of delivering a stand-alone high-impact dataset to enhance opportunities for Early Science.
 
 For the SV surveys, a visit consists of a single 30 second exposure for $grizy$ and a single 38 second exposure for $u$.
+The SV surveys assume 75\% efficiency and 25\% engineering downtime between evening and morning astronomical twilight, starting around 1 July 2025.
+The simulations assume that on-sky observations conclude 2 hours prior to sunrise, and a limited azimuth range 3 hours prior to sunrise.
 
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_uptime.png}
+    \caption{SV surveys model of efficiency and engineering downtime used for the simulation. Black lines indicate engineering time. Shaded bands indicate evening and morning astronomical, nautical, and civil twilight periods.}
+    \label{sv_surveys_uptime}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_coverage.png}
+    \caption{SV surveys coverage expressed as total number of overlapping visits across the ugrizy bands.}
+    \label{sv_surveys_coverage_band}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_coverage_band.png}
+    \caption{SV surveys coverage expressed as total number of overlapping visits in each of the individual ugrizy bands.}
+    \label{sv_surveys_coverage_band}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_template_coverage.png}
+    \caption{SV surveys template coverage expressed as total number of overlapping visits in each of the individual ugrizy bands, with a color scale selected to more easily visualize template coverage.}
+    \label{sv_surveys_template_coverage}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_cumulative_template_area.png}
+    \caption{SV surveys coverage expressed as total number of overlapping visits in each of the individual ugrizy bands.}
+    \label{sv_surveys_cumulative_template_area}
+    \end{center}
+\end{figure}
 
 \textit{Deep Survey}
 
-The Deep Survey is implemented using a configuration similar to the LSST DDFs, in particular, targeting the four DDFs located in the south Galactic cap that are visible in July-September: ELAIS S1, XMM LSS, ECDFS, and EDFSa + EDFSb.
+The Deep Survey is implemented using a configuration similar to that of the LSST DDFs, specifically, targeting the four DDFs located in the south Galactic cap that are visible in July-September: ELAIS S1, XMM LSS, ECDFS, and EDFSa + EDFSb.
 The combined area of these four fields is $\sim50$~deg$^2$, noting that EDFS comprises two adjascent LSSTCam pointings.
 Observations for the SV survey itself will be complemented by prior Rubin/LSSTCam observations of the COSMOS DDF in $ugrizy$ acquired in May-June 2025, for a combined coverage of $\sim60$~deg$^2$ considering all five LSST DDFs.
 By design, the LSST DDFs overlap many existing and planned ground-based and space-based imaging and spectroscopic datasets, as well as broad multiwavelength datasets from radio to X-ray.
@@ -94,7 +135,7 @@ Visits are split evenly across the EDFS A and B pointings.
 
 \textit{Wide Survey}
 
-The Wide Survey is implemented using a configuration similar to the LSST Wide-Fast-Deep, but constrained to a region of $\pm10$~deg in ecliptic latitude.
+The Wide Survey is implemented using a configuration similar to that of the LSST Wide-Fast-Deep, but constrained to a region of $\pm10$~deg in ecliptic latitude.
 By concentrating the observations within this region, it is possible to build several hundred degrees of template coverage in multiple bands within the first month the SV survey, thus enabling survey-scale tests of Prompt Processing with difference image analysis during the SV surveys.
 The ecliptic region is selected to test Solar System Object processing pipelines at LSST survey scale.
 The planned footprint extends across the southern Galactic cap, touching the Galactic plane on both sides, thus covering regions with a range of stellar densities and stellar populations, as well as a large contiguous low-dust region at high Galactic latitude.
@@ -102,7 +143,26 @@ The footprint spans a range of declinations, allowing access for other ground-ba
 The footprint coincides with the low-dust WFD, Galactic plane, and North Ecliptic Spur from the standard LSST Cadence, with a ratio of visits and band coverage in each region matching that of the standard LSST cadence.
 For example, the band coverage in the low-dust WDF and Galactic plane is $ugrizy$, while the north ecliptic spur recieves a smaller total number of visits and limited to the $griz$ bands.
 
-\textit{Template Generation Survey}
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_ddf_visits.png}
+    \caption{SV surveys total number of visits for the LSST DDFs in the south Galactic cap.}
+    \label{sv_surveys_ddf_visits}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_ddf_cadence.png}
+    \caption{SV surveys observing cadence for the LSST DDFs in the south Galactic cap.}
+    \label{sv_surveys_ddf_visits}
+    \end{center}
+\end{figure}
+
+
+\textit{Expanded Template Generation Survey (Best Effort)}
+
+In addition to the Deep Survey and Wide Survey, Rubin Observatory is exploring the technical feasibility of a \textbf{Expanded Template Generation Survey}, conducted on a best-effort basis, that would be optimized for expanding wide-area template coverage, including to support target-of-opportunity science cases during the first year of LSST.
 
 The SV surveys are a Rubin Observatory Construction deliverable.
 While the primary objective of the SV surveys is to fulfill the Construction Completeness criteria defined in this document, a secondary goal of the SV surveys is to facilitate a smooth transition to operations, and where possible, enhance the impact of the early Science Program.
@@ -110,19 +170,28 @@ Multiple science cases would benefit from acquiring wide-area template coverage 
 Accordingly, Rubin Observatory is exploring the technical feasibility of such observations as part of the SV surveys on a best-effort basis.
 
 During system commissioning, telescope pointings at the end of night prior to dome closure are limited to an azimuth range in the southwest, thus limiting the capability to observe the LSST DDFs and the footprint of the Wide Survey.
-During this end-of-night period, the current plans are to take observations to build wide-area template coverage in 2 bands (likely $gi$) in regions located at declinations $[-55, -30]$ and Galactic latitudes $|b| > 15$~deg.
+During this end-of-night period, the current plans are to take observations to expand wide-area template coverage in 2 bands (likely $gi$) in regions located at declinations $[-55, -30]$ and Galactic latitudes $|b| > 15$~deg.
+In the simulations presented here, the Expanded Template Generation Survey has been included in the same FBS configuration as the Wide and Deep Surveys, to assess the additional template coverage that could be achieved.
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_requested_footprint.png}
+    \caption{SV surveys requested footprint definition in equatorial coordinates. Yellow indicates the Wide Survey and purple indicates the Expanded Template Generation Survey. Gray shading indicates the standard LSST footprint.}
+    \label{sv_surveys_requested_footprint}
+    \end{center}
+\end{figure}
 
 \textit{Caveats}
 
 The enhanced SV survey described here represents a design target based on system specifications.
 
-Rubin Observatory is still in the commissioning phase, and a central objective of the SV surveys is to directly test and to further optimize the operational efficiency under realistic conditions.
+Rubin Observatory is still in the commissioning phase; the key objective of the SV surveys is to directly verify the as-built system and to evaluate the operational efficiency under realistic conditions.
 The actual volume of science-grade data collected will be directly related to the realized operational efficiency over the next several months, which includes uncertainty on the system-level performance, weather in Chilean winter, etc.
 The actual volume of delivered science-grade data from the SV surveys might be a fraction of the design, and still be consistent with meeting the commissioning objectives.
 
 If the realized operational efficiency during the pilot observations is lower than expected, the current plan is to reduce the footprint area by a corresponding amount to increase the likelihood that the integrated exposure design goals of the SV surveys can be achieved.
 
-The defition of Science Validation Surveys is understood to be sufficiently broad to include all types of observations driven by the FBS that are suitable for performance evaluation of in-focus science images and Science Pipelines commissioning.
+The defition of the SV Surveys is understood to be sufficiently broad to include all types of observations driven by the FBS that are suitable for performance evaluation of in-focus science images and Science Pipelines commissioning.
 
 \subsection{Criteria for Completeness Description}
 
