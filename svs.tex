@@ -2,7 +2,7 @@
 
 \subsection{Operations Readiness Requirement}
 
-The Project team shall conduct at least one Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will be autonomously driven by the scheduler and will last at least 30 days;
+The Project team shall conduct at least one autonomously driven Science Validation Survey with the science camera (LSSTCam) over a limited area of the sky that will last at least 30 days;
 
 \subsection{Objectives}
 
@@ -39,96 +39,159 @@ The Operations team plans to serve data products from the Science Validation Sur
 
 %\subsubsection{Baseline Sciece Validation Survey Design}
 
+
 \textbf{Baseline Science Validation Survey Design}
 
-The baseline schedule of on-sky commissioning activities concludes with an 8-week period to undertake two Science Validation Surveys.
-The two surveys are optimized to test science performance at full LSST depth and alerts at LSST survey data rates, respectively: a Deep component covering $\sim100$ deg$^2$ in $ugrizy$ to at least 10-yr LSST WFD equivalent exposure, and a Wide component covering at least $\sim1000$ deg$^2$ in $griz$ to 1-yr LSST WFD equivalent exposure.
-The survey components are designed to be scalable, depending on needs to verify and validate operational procedures described above.
+(Updated June 2025)
 
-Based on initial Scheduler simulations, observations for the two survey components are planned to be interleaved as part of a single Scheduler configuration.
-Data from both survey components will be processed with Prompt Production and Data Release Production pipelines.
-%The two surveys are designed to test the Prompt Products and Data Release Products, respectively.
-These surveys would begin after the early system integration and test period for LSSTCam, and assume that stable science quality imaging capability has been established prior to beginning sustained observing campaigns.
-% (i.e., System First Light technical milestone \citeds{SITCOMTN-061})
-Additional details regarding the baseline Science Validation survey design below.
+On-sky engineering with LSSTCam began on 15 April 2025 and SV survey observations are expected to begin in late June 2025.
+As more information regarding the progress of on-sky commissioning and plans for LSST Operations becomes available, Rubin Observatory has identified opportunities to refine the detailed implementation of the SV surveys to facilitate a smooth transition from Construction to Operations, and to enhance the potential impact of the Early Science Program.
+The ``enhanced'' baseline SV survey design incorporates information regarding
+\begin{itemize}
+        \item the expected months of SV survey observations and visibility of specific target fields,
+        \item overall operational efficiency and system performance demonstrated during the first two months of the on-sky commissioning campaign with LSSTCam,
+        \item guidance derived from the community process to develop the LSST Cadence, facilitated by the Survey Cadence Optimization Committee (SCOC),
+        \item input from the Rubin science community regarding the evolving scientific landscape and emergent opportunities,
+        \item and planned engineering activities around the transition from Construction to Operations.
+\end{itemize}
+
+Rubin Observatory has developed and simulated a Feature Based Scheduler (FBS) configuration for the enhanced baseline SV survey design that could be implemented and is expected to meet the Construction completeness criteria if executed.
+
+As of early June 2025, the forecast of on-sky commissioning activities includes pilot observations for the SV surveys beginning in late June, and sustained SV survey observations running from early July to mid September. The objectives of the SV survey pilot observations are to
+\begin{itemize}
+        \item evaluate the distribution of delivered image quality, including AOS performance, for wide-area survey observations,
+        \item continue optimization of the AOS open loop and closed loop control systems,
+        \item evaluate the overall operational uptime in wide-area survey mode observations similar to the nominal LSST cadence,
+        \item and validate the FBS performance and the observing strategy for the SV surveys.
+\end{itemize}
+
+The enhanced baseline SV survey design includes two main survey components that are interleaved as part of a single FBS configuration:
+\begin{itemize}
+        \item a \textbf{Deep Survey} that is optimized for testing deep coadds at the equivalent integrated exposure of the LSST 10-year survey and beyond, achieving a rapid temporal sampling in those fields, and validating the observing strategy for the LSST Deep Drilling Fields (DDFs);
+        \item a \textbf{Wide Survey} that is optimized for testing template generation and Prompt Processing with difference image analysis at data rates that would be expected during the first year of LSST, thereby providing a sustained full-scale test of the Data Facility;
+\end{itemize}
+The enhanced baseline SV survey adopts many of the design elements of the standard LSST cadence, with modifications to increase the likelihood of delivering a stand-alone high-impact dataset to enhance opportunities for Early Science.
+
+For the SV surveys, a visit consists of a single 30 second exposure for $grizy$ and a single 38 second exposure for $u$.
+The SV survey simulation assumes 55\% of time between evening and morning nautical twilight will be available for observations starting around 1 July 2025, with losses coming from weather, engineering downtime, and operation constraints.
+The simulations assume that on-sky observations conclude 2 hours prior to sunrise, and a limited azimuth range 3 hours prior to sunrise.
+
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_uptime.png}
+    \caption{SV surveys model of efficiency and engineering downtime used for the simulation. Black lines indicate engineering time. Shaded bands indicate evening and morning astronomical, nautical, and civil twilight periods.}
+    \label{sv_surveys_uptime}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_coverage.png}
+    \caption{SV surveys coverage expressed as total number of overlapping visits across the ugrizy bands.}
+    \label{sv_surveys_coverage}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_coverage_band.png}
+    \caption{SV surveys coverage expressed as total number of overlapping visits in each of the individual ugrizy bands.}
+    \label{sv_surveys_coverage_band}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_template_coverage.png}
+    \caption{SV surveys template coverage expressed as total number of overlapping visits in each of the individual ugrizy bands, with a color scale selected to more easily visualize template coverage.}
+    \label{sv_surveys_template_coverage}
+    \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_cumulative_template_area.png}
+    \caption{SV surveys coverage expressed as total number of overlapping visits in each of the individual ugrizy bands.}
+    \label{sv_surveys_cumulative_template_area}
+    \end{center}
+\end{figure}
 
 \textit{Deep Survey}
 
-\begin{itemize}
+The Deep Survey is implemented using a configuration similar to that of the LSST DDFs, specifically, targeting the four DDFs located in the south Galactic cap that are visible in July-September: ELAIS S1, XMM LSS, ECDFS, and EDFSa + EDFSb.
+The combined area of these four fields is $\sim50$~deg$^2$, noting that EDFS comprises two adjascent LSSTCam pointings.
+Observations for the SV survey itself will be complemented by prior Rubin/LSSTCam observations of the COSMOS DDF in $ugrizy$ acquired in May-June 2025, for a combined coverage of $\sim60$~deg$^2$ considering all five LSST DDFs.
+By design, the LSST DDFs overlap many existing and planned ground-based and space-based imaging and spectroscopic datasets, as well as broad multiwavelength datasets from radio to X-ray.
+There is approximately $\sim30$~deg$^2$ of overlap with the Euclid Q1 release, and overlap with deep fields recommended by the Roman Observations Time Allocation Committee.
+% https://arxiv.org/pdf/2505.10574
 
-        \item During first 30 days of Science Validation survey period
-
-        \begin{itemize}
-
-                \item 11 pointings $\times$ 825 visits per pointing = 9075 visits ($\sim$15 night equivalents)
-                \item 825 visits / pointing $(u, g, r, i, z, y)$ = (56, 80, 184, 184, 160, 160)
-                \item 100 deg$^2$ in single contiguous region overlapping an LSST DDF; nominal LSST WFD dither pattern (might need intra-night translational offsets and rotator angles to simulate expected LSST distribution)
-                \item Steadily build integrated exposure during the survey
-                \item During a 30 day period, each pointing would receive average of 25 visits on each night
-                %\item Representative DRP data products: Source, Object, ForcedSource, DiaSource, DiaObject, DiaForcedSource
-                %\item Representaitive AP mode: DiaObject, DiaSource, DIAForcedSource
-
-        \end{itemize}
-
-        \item During Next 30 days of Science Validation survey period: increase to 20-year LSST WFD exposure, 1650 visits / pointing, $(u, g, r, i, z, y)$ = (112, 160, 368, 368, 320, 320)
-
-\end{itemize}
+The planned observing cadence for the DDFs during the SV surveys uses a modified form of the ``ocean'' strategy currently being considered by the SCOC.
+The ``ocean'' strategy features more frequent observing epochs to better sample night-to-night time-domain phenomena and provide more distinct epochs for validating the internal calibration during commissioning.
+The primary modification for the SV surveys is to increase the number of visits relative to the baseline ``ocean'' strategy in order to accumulate a deeper integrated exposure during the finite time period of the SV surveys.
+During the SV surveys, XMM LSS is designated for a ``deep season'', with longer sequences of visits in each epoch, particularly in the $i$ and $z$ bands.
+ELAIS S1, ECDFS, and EDFS are designated for ``shallow seasons''.
+Visits are split evenly across the EDFS A and B pointings.
 
 \textit{Wide Survey}
 
-\begin{itemize}
+The Wide Survey is implemented using a configuration similar to that of the LSST Wide-Fast-Deep, but constrained to a region of $\pm10$~deg in ecliptic latitude.
+By concentrating the observations within this region, it is possible to build several hundred degrees of template coverage in multiple bands within the first month the SV survey, thus enabling survey-scale tests of Prompt Processing with difference image analysis during the SV surveys.
+The ecliptic region is selected to test Solar System Object processing pipelines at LSST survey scale.
+The planned footprint extends across the southern Galactic cap, touching the Galactic plane on one side, thus covering regions with a range of stellar densities and stellar populations, as well as a large contiguous low-dust region at high Galactic latitude.
+The footprint spans a range of declinations, allowing access for other ground-based telescopes located in the southern and northern hemispheres.
+The footprint coincides with the low-dust WFD, Galactic plane, and North Ecliptic Spur from the standard LSST Cadence, with a ratio of visits and band coverage in each region matching that of the standard LSST cadence.
+For example, the band coverage in the low-dust WDF and Galactic plane is $ugrizy$, while the north ecliptic spur recieves a smaller total number of visits and limited to the $griz$ bands.
 
-        \item During first 30 days of Science Validation survey period
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_ddf_visits.png}
+    \caption{SV surveys total number of visits for the LSST DDFs in the south Galactic cap.}
+    \label{sv_surveys_ddf_visits}
+    \end{center}
+\end{figure}
 
-        \begin{itemize}
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_ddf_cadence.png}
+    \caption{SV surveys observing cadence for the LSST DDFs in the south Galactic cap.}
+    \label{sv_surveys_ddf_cadence}
+    \end{center}
+\end{figure}
 
-                \item 110 pointings $\times$ 80 visits per pointing = 9000 visits ($\sim15$ night equivalents)
-                \item 80 visits per pointing $(g, r, i, z)$ = (20, 20, 20, 20)
-                \item 1050 deg$^2$  in single contiguous region placed to optimize scheduling flexibility, considering the SV survey Deep region; span range of stellar density; cross ecliptic
-                \item Steadily build integrated exposure during the survey; consider prioritizing template coverage early
-                \item Solar System cadence
-                \item During a 30 day period, each pointing would receive average of $\sim2.6$ visits on each night
-                %\item Representative DRP data products: Source, Object, ForcedSource, DiaSource, DiaObject, DiaForcedSource
-                %\item Representaitive AP mode: DiaObject, DiaSource, DIAForcedSource
 
-        \end{itemize}
+\textit{Expanded Template Generation Survey (Best Effort)}
 
-        \item During next 30 days of Science Validation survey period: increase area coverage attempting to maintain depth uniformity
+In addition to the Deep Survey and Wide Survey, Rubin Observatory is exploring the technical feasibility of a \textbf{Expanded Template Generation Survey}, conducted on a best-effort basis, that would be optimized for expanding wide-area template coverage, including to support target-of-opportunity science cases during the first year of LSST.
 
-\end{itemize}
+The SV surveys are a Rubin Observatory Construction deliverable.
+While the primary objective of the SV surveys is to fulfill the Construction Completeness criteria defined in this document, a secondary goal of the SV surveys is to facilitate a smooth transition to operations, and where possible, enhance the impact of the early Science Program.
+Multiple science cases would benefit from acquiring wide-area template coverage during the on-sky commissioning period to enhance opportunities for time-domain science during the first year of LSST, including time-limited target-of-opportunity science cases that require contemporaneous observations with other facilities.
+Accordingly, Rubin Observatory is exploring the technical feasibility of such observations as part of the SV surveys on a best-effort basis.
 
-%    Wide-area Science Validation Survey: In a first phase, observe a region of roughly 1000~deg$^2$ to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey in multiple filters (2 weeks). Create image templates with the Data Release Production pipeline to be used as input for difference imaging. In a second phase starting roughly 4 weeks after the completion of the first phase, observe the same region to an integrated exposure equivalent to 1 year of the Wide-Fast-Deep survey, running the Alert Production pipeline at full scale (2 weeks). The 4-week separation between phases is used for template generation and to allow evolution of variable and transient astrophysical sources between template and test images.
-%    10-year Depth Science Validation Survey: Observe a region larger than 100~deg$^2$ to an integrated exposure equivalent to the 10-year Wide-Fast-Deep survey in multiple filters (4 weeks). Process the data with the Data Release Production pipeline.
+During system commissioning, telescope pointings at the end of night prior to dome closure are limited to an azimuth range in the southwest, thus limiting the capability to observe the LSST DDFs and the footprint of the Wide Survey.
+During this end-of-night period, the current plans are to take observations to expand wide-area template coverage in 2 bands (likely $gi$) in regions located at declinations $[-55, -30]$ and Galactic latitudes $|b| > 15$~deg.
+In the simulations presented here, the Expanded Template Generation Survey has been included in the same FBS configuration as the Wide and Deep Surveys, to assess the additional template coverage that could be achieved.
 
-%Observation Timeline (baseline):
-%2 weeks	Wide-area Science Validation Survey: Template Generation Phase
-%4 weeks	10-year Depth Science Validation Survey
-%2 weeks	Wide-area Science Validation Survey: Realtime Alert Production Phase
+\begin{figure}[htbp]
+    \begin{center}
+    \includegraphics[width=1\textwidth]{./sv_surveys_requested_footprint.png}
+    \caption{SV surveys requested footprint definition in equatorial coordinates. Yellow indicates the Wide Survey and purple indicates the Expanded Template Generation Survey. Gray shading indicates the standard LSST footprint.}
+    \label{sv_surveys_requested_footprint}
+    \end{center}
+\end{figure}
 
-The Deep Science Validation Survey is designed to testing coadds at the equivalent LSST 10-year survey full depth and beyond.
-The Wide Science Validation Survey is designed to approximate the difference imaging templates and data rates that would be expected during the first year of LSST, thus also providing a sustained full-scale test of the Data Facility.
-%early science operations,
-The Scheduler will drive nighttime observatory operation during the Science Validation Surveys.
+\textit{Caveats}
 
-The defition of Science Validation Surveys is understood to be sufficiently broad to include all types of scheduler-driven observations that are suitable for performance evaluation of in-focus science images and Science Pipelines commissioning.
+The enhanced SV survey described here represents a design target based on system specifications.
 
-%In the event of a compressed period for on-sky observations, we have a draft minimum observing strategy:
+Rubin Observatory is still in the commissioning phase; the key objective of the SV surveys is to directly verify the as-built system and to evaluate the operational efficiency under realistic conditions.
+The actual volume of science-grade data collected will be directly related to the realized operational efficiency over the next several months, which includes uncertainty on the system-level performance, weather in Chilean winter, etc.
+The actual volume of delivered science-grade data from the SV surveys might be a fraction of the design, and still be consistent with meeting the commissioning objectives.
 
-%\begin{itemize}
-%\item Single-visit KPMs:
-%        6 Star flats in $ugrizy$ \times 4 epochs = 4 nights
-%\item Nominal observing for scheduler testing = 3 nights (Note: some scheduler testing will be done during ComCam and LSSTCam integration periods)
-%\item Challenging regions (e.g., dense stellar fields) = 1 night
-%\item Full-Depth Survey:
-%        20 year depth in $ugrizy$ overlapping at least 1 external reference field, allowing dithers (factor ~3) -> $\sim$5K visits = 8 nights
-%\item Wide-Area Survey:
-%        1600 deg$^2$ in $gi$ filters to 1-year equivalent depth, repeated in two phases -> 12K visits = 20 nights
-%\end{itemize}
+If the realized operational efficiency during the pilot observations is lower than expected, the current plan is to reduce the footprint area by a corresponding amount to increase the likelihood that the integrated exposure design goals of the SV surveys can be achieved.
 
-%The example compressed on-sky observing program above is $\sim36$ nights total.
-
-%The essential elements of any observing strategy for the Science Validation surveys are (1) the need to reach at least 10-year WFD equivalent depth in all 6 bands in at least one field, (2) to reach 1-year WFD equivalent depth in at least 2 bands over an area exceeding 100~deg$^2$, (3) to exercise the nominal scheduler for LSST operations continuously for at least 2 nights, and (4) to have coverage to at least 1-year WFD equivalent depth in all 6 bands in fields spanning a range of stellar density. These minimum requirements would allow verification of the highest priority system-level science performance metrics, with more limited opportunities for science validation and characterization.
-%The baseline and compressed observing programs described above illustrate how these minimal datasets for system verification could be acquired within a window of at least 30 nights.
+The defition of the SV Surveys is understood to be sufficiently broad to include all types of observations driven by the FBS that are suitable for performance evaluation of in-focus science images and Science Pipelines commissioning.
 
 \subsection{Criteria for Completeness Description}
 
